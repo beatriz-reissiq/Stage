@@ -13,7 +13,7 @@
 
 *{
     margin: 0px; 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding: 0px
 }
 
@@ -27,13 +27,13 @@ body {
         outline: none;
         cursor: pointer;
     }
-
+/* NAVBAR ---------------------------------------- */
 header {
     nav {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        background-color: rgb(255, 255, 255);
+        background-color: white;
         width: 100%;
         min-height: 80px;
         margin: 0px;
@@ -48,7 +48,6 @@ header {
         .link {
             margin-left: 10px; 
             a {
-                font-family: 'Montserrat', sans-serif;
                 font-size: 18px;
                 color:var(--primaria);
                 text-decoration: none;
@@ -62,7 +61,6 @@ header {
             margin-right: 60px;
         } 
            .acess {
-            font-family: 'Montserrat', sans-serif;
             font-size: 15px;
             text-decoration: none;
             padding: 8px 20px;
@@ -74,5 +72,36 @@ header {
         
         }
         }
+}
+/* NAVBAR ---------------------------------------- */
+
+/* MAIN ---------------------------------------- */
+
+main {
+    width: 100%;
+
+    .container1 {
+        position: relative;
+        width: 100%;
+    }
+        width: 100%;
+        .container1 img {
+            display: flex;
+            width: 100%;
+            height: 68.11vh;
+            object-fit: cover;
+        }
+        
+        .fraseEfeito {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+
+            font-size: 1.8rem;
+            color:white;
+        }
+        
+   
 }
     
