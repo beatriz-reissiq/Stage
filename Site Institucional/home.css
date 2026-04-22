@@ -6,9 +6,14 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf');
   font-weight: 100 900;
   font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caligrafia';
+    src: url('./assets/fonts/AlexBrush-Regular.ttf');
 }
 
 *{
@@ -41,8 +46,8 @@ header {
        
         .logo {
             display: flex;
-            height: 60px;
-            margin-left: 40px;
+            height: 50px;
+            margin-left: 70px;
         }
 
         .link {
@@ -80,16 +85,15 @@ header {
 main {
     width: 100%;
 
-    .container1 {
+    .container-banner {
         position: relative;
         width: 100%;
     }
         width: 100%;
-        .container1 img {
+        .container-banner img {
             display: flex;
             width: 100%;
-            height: 68.11vh;
-            object-fit: cover;
+            height: 68.11vh;   
         }
         
         .fraseEfeito {
@@ -100,6 +104,41 @@ main {
 
             font-size: 1.8rem;
             color:white;
+        }
+
+    .container-texto {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 200px;
+        
+        
+    }
+        .fraseEfeitoMain {
+            color: rgb(34, 25, 25);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat';
+            font-size: 40px;  
+        }
+
+        .fraseEfeitoMain2 {
+            color: rgb(34, 25, 25);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat';
+            font-size: 40px;  
+        }
+
+        .fraseEfeitoColorida {
+            color:var(--terciaria);
+            font-weight: bold;
+            font-family: 'Caligrafia';
+            font-size: 70px;
         }
         
    
