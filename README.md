@@ -1,10 +1,13 @@
 # Stage
-Repositório de Arquivos 
 
-“Um espaço seguro para transformar o medo de se expor em coragem para mostrar seu talento.”
+# Sobre o Projeto
 
-<img width="2000" height="739" alt="Stage git" src="https://github.com/user-attachments/assets/c00f951b-aedc-4dc2-a3a2-ec5579930e60" />
+Stage é uma plataforma criada para ajudar pessoas que têm vontade de cantar ou tocar, mas enfrentam medo ou insegurança ao se expor.
+O site conta com um blog, como um espaço seguro onde usuários podem compartilhar experiências, desafios e conquistas, promovendo apoio mútuo e incentivando a expressão artística.
 
-O projeto Stage tem como base minha experiência pessoal com a música e a dificuldade para me apresentar em público. Mesmo tendo esse desejo de cantar desde a infância, a ausência de incentivo me levou a esconder esse interesse, ao ponto de praticá-lo apenas quando eu estivesse sozinha.
+# Objetivo
+Incentivar pessoas a superarem a timidez e desenvolverem confiança para mostrar seus talentos musicais, criando um ambiente acolhedor e colaborativo.
 
-Por isso, meu projeto visa incentivar e auxiliar as pessoas talentosas que deem um passo adiante. A ideia será colocada em prática através de um blog, voltado para pessoas que enfrentam desafios e inseguranças semelhantes, construindo um espaço para compartilhar experiências e incentivo mútuo. O objetivo é ajudar usuários a lidarem com seus medos e se sentirem mais confiantes para se expressar, especialmente no contexto artístico.
+# Justificativa
+Muitas pessoas possuem talento, mas deixam de se expressar por medo de julgamento.
+O projeto surge como uma forma de oferecer apoio, mostrando que errar faz parte do processo e que todos podem dar seu primeiro passo.
