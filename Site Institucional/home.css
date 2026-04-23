@@ -134,8 +134,19 @@ main {
             font-weight: bold;
             font-family: 'Caligrafia';
             font-size: 4rem;
-        }    
-   
+        }   
+        
+        .container-sobre {
+            margin-top: 160px;
+            width: 100%;
+            height: 65vh;
+            background-color: var(--secundaria);
+        }
+
+            .container-sobre img {
+                width: 10%;
+                height: auto;
+            }
 }
 /* ---------------------------------------- */
     
