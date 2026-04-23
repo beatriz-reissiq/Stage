@@ -1,7 +1,5 @@
 # Stage 𝄞
 
-<p align="center"> 𝄞⨾𓍢ִ໋♬⋆.˚𝄢ᡣ𐭩 </p>
-
 # 𖹭.ᐟ | Sobre o Projeto                           
 
 Stage é uma plataforma criada para ajudar pessoas que têm vontade de cantar ou tocar, mas enfrentam medo ou insegurança ao se expor. ㅤ ׅ 𝄂𝄚𝅦𝄚𝄞𝅄ㅤ<br>
