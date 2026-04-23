@@ -1,4 +1,4 @@
-# Stage 🎤︎︎
+# Stage 🎤︎︎ ⋆˙⟡
 
 # 𖹭.ᐟ | Sobre o Projeto                           
 
