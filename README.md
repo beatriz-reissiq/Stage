@@ -1,6 +1,6 @@
 # Stage
 
-<p align="center"><img width="500" height="260" alt="image" src="https://github.com/user-attachments/assets/28ea7026-9a45-445f-b811-b9fd58616275" /> </p>
+<p align="center"><img width="2000" height="739" alt="Stage git" src="https://github.com/user-attachments/assets/73575980-eb3f-4ee8-8ab9-a8274a4fdf1a" /></p>
 
 # 📌| Sobre o Projeto
 
