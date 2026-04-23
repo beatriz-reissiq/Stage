@@ -1,5 +1,5 @@
 # Stage
-<p align="center"> <i>Um espaço seguro para transformar o medo em confiança e deixar seu talento ser ouvido.</i></p>
+
 <p align="center"><img width="500" height="260" alt="image" src="https://github.com/user-attachments/assets/28ea7026-9a45-445f-b811-b9fd58616275" /> </p>
 
 # 📌| Sobre o Projeto
