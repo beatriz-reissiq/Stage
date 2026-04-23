@@ -13,18 +13,18 @@ Muitas pessoas possuem talento, mas deixam de se expressar por medo de julgament
 O projeto surge como uma forma de oferecer apoio, mostrando que errar faz parte do processo e que todos podem dar seu primeiro passo.
 
 # 𐀪𐀪 | Público-alvo
-Iniciantes e amadores na música <br>
-Pessoas que gostam de cantar ou tocar <br>
-Indivíduos com timidez ou insegurança <br>
-Amantes da música em geral <br>
+- Iniciantes e amadores na música <br>
+- Pessoas que gostam de cantar ou tocar <br>
+- Indivíduos com timidez ou insegurança <br>
+- Amantes da música em geral <br>
 
 # ᯓ‎♪ | Funcionalidades
-Cadastro e login de usuários <br>
-Publicação de posts (blog/comunidade) <br>
-Perfil de usuário <br> 
-Quiz interativo sobre gostos musicais <br>
-Dashboard com resultados do quiz <br>
-Página institucional com informações do projeto <br>
+- Cadastro e login de usuários <br>
+- Publicação de posts (blog/comunidade) <br>
+- Perfil de usuário <br> 
+- Quiz interativo sobre gostos musicais <br>
+- Dashboard com resultados do quiz <br>
+- Página institucional com informações do projeto <br>
 
 # 𐔌՞. .՞𐦯 Conceito
 “Um espaço seguro para transformar o medo de se expor em coragem para mostrar seu talento.”
