@@ -120,7 +120,7 @@ main {
     }
 
     .estrela1 {
-        margin-left: 600px;
+        margin-left: 450px;
     }
     
     .estrela2 {
@@ -170,7 +170,7 @@ main {
                   position: absolute;
                   width: 15%;
                   height: 45px;
-                  margin-left: 70vh;
+                  margin-left: 75vh;
                   margin-bottom: 210px;
                   color: white;
                   font-size: 30px;
@@ -185,6 +185,9 @@ main {
                 height: 30%;
                 margin-left: 75px;
                 margin-top: 20px;
+            }
+
+            .textoSobre {
                 color: white;
                 font-size: 20px;
             }
@@ -231,14 +234,17 @@ main {
         
             .subtitulo {
                color: var(--primaria) ;
+               font-size: 20px;
                font-weight: bold;
                margin-top: 45px;
                margin-left: -40px;
             }
 
             .texto {
-                width: 350px;
+                width: 285px;
                 margin-left: -40px;
+                margin-top: 10px;
+                font-size: 17px;
             }
 /* ---------------------------------------- */
 
