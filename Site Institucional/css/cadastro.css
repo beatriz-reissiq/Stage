@@ -84,3 +84,36 @@ header {
         }
 }
 /* ---------------------------------------- */
+
+/* Container-Marrom ---------------------------------------- */
+main {
+    background-color: blue;
+    width: 100%;
+    height: 87.6vh;
+    display: flex;
+    
+}
+    .container-ilustracao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        height: 100%;
+        background-color: var(--primaria);
+    }
+
+    .container-forms {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 60%;
+        height: 100%;
+    }
+
+    .container-ilustracao img {
+        width: 70%;
+        height: 60vh;
+    }
