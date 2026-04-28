@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="./css/cadastro.css">
 </head>
 <body>
      <header>
@@ -23,5 +24,28 @@
         </div>
     </nav>
   </header>
+
+  <main>
+    <div class="container-ilustracao">
+        Frase top
+        <img src="./assets/img/images-removebg-preview.png" alt="">
+    </div>
+
+    <div class="container-forms">
+        <div class="tituloForms">Cadastre-se</div>
+        nome: 
+        <input type="text" id="ipt_nome"> <br>
+        email: 
+        <input type="text" id="ipt_email"> <br>
+        senha:  
+        <input type="password" id="ipt_senha" > <br>
+        confirme a senha:  
+        <input type="password" id="ipt_confirmacao"> <br>
+
+        <button onclick="cadastrar()">Cadastrar</button>
+        <small><a href="./login.html">Já tem cadastro? Entre aqui.</small> </a>
+       
+    </div>
+  </main>
 </body>
 </html>

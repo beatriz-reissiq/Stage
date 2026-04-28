@@ -8,14 +8,14 @@
 /* Declarando Fontes Personalizadas ---------------------------------------- */
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf');
+  src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf');
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
     font-family: 'Caligrafia';
-    src: url('./assets/fonts/AlexBrush-Regular.ttf');
+    src: url('../assets/fonts/AlexBrush-Regular.ttf');
 }
 /* ---------------------------------------- */
 *{
