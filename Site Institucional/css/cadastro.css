@@ -17,6 +17,11 @@
     font-family: 'Caligrafia';
     src: url('../assets/fonts/AlexBrush-Regular.ttf');
 }
+
+@font-face {
+    font-family: 'Serif Display';
+    src: url('../assets/fonts/DMSerifDisplay-Regular.ttf')
+}
 /* ---------------------------------------- */
 *{
     margin: 0px; 
@@ -96,11 +101,10 @@ main {
     .container-ilustracao {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         width: 40%;
         height: 100%;
-        background-color: var(--primaria);
+        background-color: var(--secundaria);
     }
 
     .container-forms {
@@ -114,6 +118,11 @@ main {
     }
 
     .container-ilustracao img {
-        width: 70%;
-        height: 60vh;
+        width: auto;
+        height: auto;
+    }
+
+    .fraseEfeito {
+        color: white;
+        font-family: 'Serif Display';
     }
