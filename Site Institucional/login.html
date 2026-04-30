@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-    
+     <header>
+    <nav>
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt=""> 
+        </div>
+        
+        <div class="link">
+        <a class="link" href="home.html">Home</a>
+        <a class="link" href="quiz.html">Quiz</a>
+        <a class="link" href="dashboard.html">Dashboard</a>
+        </div>
+        
+        <div class="forms">
+            <button><a class="acess" href="cadastro.html">Participe</a></button>
+        </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container-ilustracao">
+        <div class="fraseEfeito">Seja bem-vindo(a) de volta!</div>
+        <div class="subtexto">Realize o seu acesso nos campos ao lado para acessar o nosso site!</div>
+        <div class="ilustracao"><img src="./assets/img/mulher-cantando.png" alt=""></div>
+    </div>
+
+    <div class="container-forms">
+        <div class="tituloForms">Faça o seu login</div>
+        <input placeholder="Email" type="text" id="ipt_email"> <br>
+        <input placeholder="Senha" type="password" id="ipt_senha" > <br>
+
+        <button onclick="cadastrar()">Login</button>
+        <small>Ainda não tem um cadastro? <a href="./login.html">Cadastre-se</small> </a>
+       
+    </div>
+  </main>
 </body>
 </html>

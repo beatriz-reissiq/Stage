@@ -101,16 +101,23 @@ main {
     .container-ilustracao {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center ;
         width: 40%;
         height: 100%;
         background-color: var(--secundaria);
     }
 
-    .container-ilustracao img {
-        width: 500px;
-        height: auto;
+    .ilustracao img{
+        width: 65%;
         margin-left: 70px;
+        margin-bottom: -120px;
+    }
+
+    .subtexto {
+        color: white;
+        margin-left: 70px;
+        margin-top: 40px;
+        width: 70%;
     }
 
     .fraseEfeito {
@@ -133,11 +140,7 @@ main {
     .tituloForms {
         font-size: 40px;
         font-weight: bold;
-    }
-
-    .subtitulo {
-        color: gray;
-        margin-bottom: 30px;
+         margin-bottom: 30px;
     }
 
     input {
