@@ -19,8 +19,8 @@
 }
 
 @font-face {
-    font-family: 'Serif Display';
-    src: url('../assets/fonts/DMSerifDisplay-Regular.ttf')
+    font-family: 'Heart';
+    src: url('../assets/fonts/Heart Bubble.otf')
 }
 /* ---------------------------------------- */
 *{
@@ -92,10 +92,10 @@ header {
 
 /* Container-Marrom ---------------------------------------- */
 main {
-    background-color: blue;
     width: 100%;
     height: 87.6vh;
     display: flex;
+    align-items: center;
     
 }
     .container-ilustracao {
@@ -107,22 +107,61 @@ main {
         background-color: var(--secundaria);
     }
 
+    .container-ilustracao img {
+        width: 500px;
+        height: auto;
+        margin-left: 40px;
+    }
+
+    .fraseEfeito {
+        margin-left: 40px;
+        margin-bottom: -30px;
+        color: var(--primaria);
+        font-size: 40px;
+        font-family: 'Heart';
+    }
+
     .container-forms {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: white;
         width: 60%;
         height: 100%;
     }
 
-    .container-ilustracao img {
-        width: auto;
-        height: auto;
+    .tituloForms {
+        font-size: 40px;
+        font-weight: bold;
     }
 
-    .fraseEfeito {
+    .subtitulo {
+        color: gray;
+        margin-bottom: 30px;
+    }
+
+    input {
+        width: 40%;
+        height: 25px;
+        border: none;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.795);
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .container-forms button {
+        width: 80px;
+        height: 30px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: var(--secundaria);
         color: white;
-        font-family: 'Serif Display';
+    }
+
+    .container-forms a {
+        color: var(--primaria);
+    }
+
+    .container-forms small {
+        color: var(--primaria);
     }
