@@ -93,7 +93,7 @@ header {
 /* Container-Marrom ---------------------------------------- */
 main {
     width: 100%;
-    height: 87.6vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     
@@ -108,13 +108,13 @@ main {
     }
 
     .container-ilustracao img {
-        width: 500px;
+        width: 100%;
         height: auto;
-        margin-left: 70px;
+        margin-left: 10%;
     }
 
     .fraseEfeito {
-        margin-left: 70px;
+        margin-left: 10%;
         margin-bottom: -30px;
         color: var(--primaria);
         font-size: 40px;
@@ -133,6 +133,7 @@ main {
     .tituloForms {
         font-size: 40px;
         font-weight: bold;
+        
     }
 
     .subtitulo {
@@ -142,18 +143,19 @@ main {
 
     input {
         width: 40%;
-        height: 25px;
+        height: 3%;
         border: none;
-        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.795);
+        outline: none;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.562);
         border-radius: 5px;
         padding: 5px;
     }
 
     .container-forms button {
-        width: 80px;
-        height: 30px;
+        width: 11%;
+        height: 5%;
         border-radius: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 2%;
         background-color: var(--secundaria);
         color: white;
     }
@@ -164,4 +166,17 @@ main {
 
     .container-forms small {
         color: var(--primaria);
+    }
+
+    .voltar {
+        color: white;
+        margin-left: 6%;
+        margin-bottom: 3%;
+        width: 20%;
+        height: auto;
+    }
+
+    .voltar a {
+        text-decoration: none;
+        color: inherit;
     }
