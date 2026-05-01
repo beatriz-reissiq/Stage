@@ -44,7 +44,7 @@ body {
 header {
     nav {
         position: absolute;
-        background-color: rgba(0, 0, 0, 0.381);
+        background-color: rgba(0, 0, 0, 0.118);
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -168,7 +168,7 @@ main {
             .violao {
                 width: 42vh;
                 height: 41vh;
-                margin-left: 140px;
+                margin-left: 12rem;
                 box-shadow: -34px 23px 0px 5px var(--primaria);
             }
             
@@ -179,12 +179,12 @@ main {
 
              .tituloSobre { 
                   position: absolute;
-                  width: 15%;
-                  height: 45px;
-                  margin-left: 75vh;
-                  margin-bottom: 210px;
+                  width: 30vw;
+                  height: 5vh;
+                  margin-left: 74vh;
+                  margin-bottom: 25vh;
                   color: white;
-                  font-size: 30px;
+                  font-size: 2rem;
                   font-weight: bolder;
                   border-bottom: 2px solid white;
                   
@@ -192,15 +192,14 @@ main {
 
             .sobre {
                 position: relative;
-                width: 50%;
-                height: 30%;
-                margin-left: 75px;
-                margin-top: 20px;
+                width: 60rem;
+                height: 8vh;
+                margin-left: 12vh;
             }
 
             .textoSobre {
                 color: white;
-                font-size: 20px;
+                font-size: 1.7rem;
             }
 }
 /* ---------------------------------------- */
@@ -208,7 +207,7 @@ main {
 /* CONTAINER SERVIÇOS ---------------------------------------- */
     
         .container-servicos {
-            margin-top: 100px;
+            margin-top: 1vh;
             width: 100%;
             height: 85vh;
             display: flex;
@@ -218,8 +217,8 @@ main {
         }
 
             .card  {
-                width: 18%;
-                height: 43%;
+                width: 18vw;
+                height: 36vh;
                 margin-top: 40px;
                 box-shadow: -34px 23px 0px 5px var(--primaria);
                 justify-content: column;
@@ -234,7 +233,7 @@ main {
             position: absolute;
             display: flex;
             justify-content: center;
-            margin-bottom: 400px;
+            margin-bottom: 55vh;
             color: var(--primaria);
             font-size: 30px;
             font-weight: bolder;
@@ -245,7 +244,7 @@ main {
         
             .subtitulo {
                color: var(--primaria) ;
-               font-size: 20px;
+               font-size: 1.4rem;
                font-weight: bold;
                margin-top: 45px;
                margin-left: -40px;
@@ -255,7 +254,7 @@ main {
                 width: 285px;
                 margin-left: -40px;
                 margin-top: 10px;
-                font-size: 17px;
+                font-size: 1.2rem;
             }
 /* ---------------------------------------- */
 
