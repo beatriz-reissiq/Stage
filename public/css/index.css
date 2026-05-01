@@ -85,15 +85,12 @@ header {
             border-radius: 8px;
             border: none;
             cursor: pointer;
-        
         }
         }
 
         .container-banner {
         position: relative;
         width: 100%;
-       
-
     }
 
         .container-banner img {

@@ -113,4 +113,11 @@
         
         div_mensagem.innerHTML = `${mensagem}`
     }
+
+  
+        if (!sessionStorage.ID_USUARIO) {
+            alert("Você precisa estar logado!");
+            window.location = "login.html";
+        }
+
 </script>
