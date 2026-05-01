@@ -40,60 +40,11 @@ body {
         cursor: pointer;
     }
 
-/* NAVBAR ---------------------------------------- */
-header {
-    nav {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        background-color: white;
-        width: 100%;
-        min-height: 80px;
-        margin: 0px;
-        gap: 20px;
-        box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.175);
-       
-        .logo {
-            display: flex;
-            height: 50px;
-            margin-left: 70px;
-            margin-bottom: 10px;
-        }
-
-        .link {
-            margin-left: 10px; 
-            a {
-                font-size: 18px;
-                color:var(--primaria);
-                text-decoration: none;
-                text-align: end;  
-                padding-right: 8px;
-            }
-        }
-
-        .forms {
-            margin-left: auto;
-            margin-right: 60px;
-        } 
-           .acess {
-            font-size: 15px;
-            text-decoration: none;
-            padding: 8px 20px;
-            background-color: var(--primaria);
-            color: white;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-        
-        }
-        }
-}
-/* ---------------------------------------- */
 
 /* Container-Marrom ---------------------------------------- */
 main {
     width: 100%;
-    height: 87.6vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     
@@ -108,9 +59,8 @@ main {
     }
 
     .ilustracao img{
-        width: 65%;
-        margin-left: 70px;
-        margin-bottom: -120px;
+        width: 60vh;
+        margin-left: 5rem;
     }
 
     .subtexto {
@@ -144,7 +94,7 @@ main {
     }
 
     input {
-        width: 40%;
+        width: 23rem;
         height: 25px;
         border: none;
         box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.795);
@@ -166,5 +116,19 @@ main {
     }
 
     .container-forms small {
+        margin-top: 1rem;
         color: var(--primaria);
+    }
+
+    .voltar {
+        color: white;
+        margin-left: 6%;
+        margin-bottom: 3%;
+        width: 20%;
+        height: auto;
+    }
+
+    .voltar a {
+        text-decoration: none;
+        color: inherit;
     }
