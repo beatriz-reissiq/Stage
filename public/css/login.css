@@ -1,0 +1,134 @@
+/* Declarando Cores ---------------------------------------- */
+    :root {
+    --primaria: #5E3527;
+    --secundaria: #B39289;
+    --terciaria: #A1786E;
+}
+
+/* Declarando Fontes Personalizadas ---------------------------------------- */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caligrafia';
+    src: url('../assets/fonts/AlexBrush-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Heart';
+    src: url('../assets/fonts/Heart Bubble.otf')
+}
+/* ---------------------------------------- */
+*{
+    margin: 0px; 
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px
+}
+
+body {
+    background-color: white;
+    }
+
+    button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+
+/* Container-Marrom ---------------------------------------- */
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    
+}
+    .container-ilustracao {
+        display: flex;
+        flex-direction: column;
+        justify-content: center ;
+        width: 40%;
+        height: 100%;
+        background-color: var(--secundaria);
+    }
+
+    .ilustracao img{
+        width: 60vh;
+        margin-left: 5rem;
+    }
+
+    .subtexto {
+        color: white;
+        margin-left: 70px;
+        margin-top: 40px;
+        width: 70%;
+    }
+
+    .fraseEfeito {
+        margin-left: 70px;
+        margin-bottom: -30px;
+        color: var(--primaria);
+        font-size: 40px;
+        font-family: 'Heart';
+    }
+
+    .container-forms {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 100%;
+    }
+
+    .tituloForms {
+        font-size: 40px;
+        font-weight: bold;
+         margin-bottom: 30px;
+    }
+
+    input {
+        width: 23rem;
+        height: 25px;
+        border: none;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.795);
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .container-forms button {
+        width: 80px;
+        height: 30px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: var(--secundaria);
+        color: white;
+    }
+
+    .container-forms a {
+        color: var(--primaria);
+    }
+
+    .container-forms small {
+        margin-top: 1rem;
+        color: var(--primaria);
+    }
+
+    .voltar {
+        color: white;
+        margin-left: 6%;
+        margin-bottom: 3%;
+        width: 20%;
+        height: auto;
+    }
+
+    .voltar a {
+        text-decoration: none;
+        color: inherit;
+    }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./css/cadastro.css">
+</head>
+<body>
+     
+  <main>
+    <div class="container-ilustracao">
+        <button class="voltar"> <a href="./index.html">⟵ Voltar</a></button>
+        <div class="fraseEfeito">Você só precisa <br> de um primeiro passo</div>
+        <img src="./assets/img/musica-cadastro.png" alt="">
+    </div>
+
+    <div class="container-forms">
+        <div class="tituloForms">Crie sua conta</div>
+        <span class="subtitulo">Preencha as informações abaixo</span>
+        <input placeholder="Nome Completo" type="text" id="ipt_nome"> <br>
+        <input placeholder="Email" type="text" id="ipt_email"> <br>
+        <input placeholder="Meu talento" type="text" id="ipt_vocacao"> <br>
+        <input placeholder="Senha" type="password" id="ipt_senha" > <br>
+        <input placeholder="Confirme sua senha" type="password" id="ipt_confirmacao"> <br>
+
+        <button onclick="cadastrar()">Cadastrar</button>
+        <small>Já tem cadastro? <a href="./login.html">Entre aqui.</small> </a>
+    </div>
+  </main>
+</body>
+</html>
+
+<script>
+  function cadastrar() {
+  var nomeVar = ipt_nome.value;
+  var emailVar = ipt_email.value;
+  var senhaVar = ipt_senha.value;
+  var confirmacaoSenhaVar = ipt_confirmacao.value;
+  var vocacao = ipt_vocacao.value;
+
+  if (
+    nomeVar == "" ||
+    emailVar == "" ||
+    senhaVar == "" ||
+    confirmacaoSenhaVar == "" ||
+    vocacao == ""
+  ) {
+    alert("Preencha todos os campos!");
+    return false;
+  }
+
+  if (senhaVar != confirmacaoSenhaVar) {
+    alert("As senhas não coincidem!");
+    return false;
+  }
+
+
+  fetch("/usuarios/cadastrar", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nomeServer: nomeVar,
+      emailServer: emailVar,
+      senhaServer: senhaVar,
+      vocacaoServer: vocacao
+    }),
+  })
+    .then(res => {
+      if (res.ok) {
+        alert("Cadastro realizado!");
+        setTimeout(() => {
+          window.location = "index.html";
+        }, 2000);
+      } else {
+        throw "Erro no cadastro";
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+  return false;
+}
+
+</script>
