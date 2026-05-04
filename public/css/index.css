@@ -180,9 +180,9 @@ main {
              .tituloSobre { 
                   position: absolute;
                   width: 30vw;
-                  height: 5vh;
+                  height: 7vh;
                   margin-left: 74vh;
-                  margin-bottom: 25vh;
+                  margin-bottom: 30vh;
                   color: white;
                   font-size: 2rem;
                   font-weight: bolder;
@@ -192,14 +192,14 @@ main {
 
             .sobre {
                 position: relative;
-                width: 60rem;
-                height: 8vh;
-                margin-left: 12vh;
+                width: 64rem;
+                height: 10vh;
+                margin-left: 8vh;
             }
 
             .textoSobre {
                 color: white;
-                font-size: 1.7rem;
+                font-size: 1.4rem;
             }
 }
 /* ---------------------------------------- */
@@ -218,7 +218,7 @@ main {
 
             .card  {
                 width: 18vw;
-                height: 36vh;
+                height: 38vh;
                 margin-top: 40px;
                 box-shadow: -34px 23px 0px 5px var(--primaria);
                 justify-content: column;
