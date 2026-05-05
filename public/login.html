@@ -55,11 +55,10 @@ function autenticar() {
     })
     .then(data => {
 
-
         sessionStorage.ID_USUARIO = data.id;
         sessionStorage.NOME_USUARIO = data.nome;
 
-        alert("Bem-vindo, " + data.nome + "!");
+        alert("Olá, " + data.nome + "!");
 
         window.location = "index.html";
     })

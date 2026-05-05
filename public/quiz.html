@@ -56,10 +56,6 @@
         <input type="text" id="input_artistas">
         <br>
         <button onclick="exibirLista()">Mostrar Meu Estilo Musical</button>
-
-
-
-
         <div id="div_mensagem"></div>
 
     
@@ -68,6 +64,16 @@
 </body>
 </html>
 <script>
+
+     window.onload = function () {
+    if (sessionStorage.ID_USUARIO) {
+        document.getElementById("btnParticipe").style.display = "none";
+        } else {
+            alert('Você precisa estar logado para realizar o quiz!')
+            return false
+        }
+    }
+
     let mensagem = ''
     let pontosPop = 0
     let pontosRock = 0
