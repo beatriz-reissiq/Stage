@@ -1,0 +1,184 @@
+/* Declarando Cores ---------------------------------------- */
+:root {
+    --primaria: #5E3527;
+    --secundaria: #B39289;
+    --terciaria: #A1786E;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit;       /* Usa a cor do texto pai (preto, geralmente) */
+}
+
+/* Declarando Fontes Personalizadas ---------------------------------------- */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caligrafia';
+    src: url('../assets/fonts/AlexBrush-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Heart';
+    src: url('../assets/fonts/Heart Bubble.otf')
+}
+/* ---------------------------------------- */
+*{
+    margin: 0px; 
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px
+}
+
+body {
+    background-color: white;
+    }
+
+    button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+    }
+/* ------------------------------------------*/
+
+/* NAVBAR ------------------------------------------*/
+header {
+    display: flex;
+    nav {
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       position: absolute;
+       width: 100%; 
+       min-height: 10vh;
+       border-bottom: 1px solid #5e352767;
+       background-color: white;
+    }
+
+    .container-usuario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-foto {
+        margin-left: 8vw;
+        border-radius: 20px;
+        width: 80px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-foto img {
+        width: 70%;
+        height: auto;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .mensagem {
+        margin-left: 10px;
+    }
+
+     nav-left {
+        background-color: white;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 5vw;
+        height: 100vh;
+        gap: 10px;
+        border-right: 1px solid #5e352767;
+    }
+
+    .forms {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap:10px;
+    }
+
+    .forms img {
+       width: 2vw;
+    }
+}
+/* ------------------------------------------*/
+
+/* KPIS ------------------------------------------*/
+main {
+    width: 100%; 
+}
+.container-conteudo {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #e9e2e054;
+   
+}
+    .container-kpi {
+        display: flex;
+        margin-left: 5vw;
+        margin-top: 10vh;
+        width: 100vw;
+        height: 20vh;
+        justify-content: end;
+        align-items: center;
+        gap: 5vw;
+
+    }
+
+    .KPI {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        background-color: white;
+        width: 18vw;
+        height: 15vh;
+        margin-right: 2vw;
+    }
+
+    .KPI p {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    .KPI .valor {
+        margin-right: 5px;
+        font-size: 2rem;
+    }
+
+    .container-graficos {
+        position: absolute;
+        width: 95%;
+        height: 70vh;
+        top: 30%;
+        left: 5%;
+    }
+
+    .container-grafico-genero {
+        width: 15vw;
+        height: auto;
+        margin-left: 7vw;
+
+    }
+    .container-grafico-idade {
+        width: 15vw;
+        height: auto;
+        margin-left: 7vw;
+        margin-top: 2vh;
+
+    }
+
+
+    
