@@ -94,6 +94,13 @@ header {
         font-weight: bold;
     }
 
+    .logo {
+            display: flex;
+            height: 50px;
+            margin-left: 30vw;
+            margin-bottom: 10px;
+        }
+
      nav-left {
         background-color: white;
         position: absolute;
@@ -149,7 +156,7 @@ main {
         justify-content: end;
         align-items: end;
         background-color: white;
-        box-shadow: 0px 2px 11px 5px #00000018;
+        border: 1px solid #5e352767;
         border-radius: 20px;
         width: 15vw;
         height: 15vh;
@@ -158,6 +165,7 @@ main {
     .KPI .titulo {
         margin-right: 30px;
         font-size: 1.2rem;
+        font-weight: bold;
 
     }
 

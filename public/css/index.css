@@ -44,7 +44,7 @@ body {
 header {
     nav {
         position: absolute;
-        background-color: rgba(0, 0, 0, 0.118);
+        background-color: rgba(0, 0, 0, 0.418);
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -94,17 +94,44 @@ header {
     }
 
         .container-banner img {
-            display: flex;
             width: 100%;
             height: 90vh;   
         }
         .fraseEfeito {
             position: absolute;
-            top: 90%;
-            left: 20%;
-            font-family: 'Heart';
-            font-size: 2rem;
+            top: 50%;
+            left: 5%;
+            font-size: 1.7rem;
             color:white;
+        }
+
+        .start {
+            width: 5vw;
+            height: 3.5vh;
+            font-size: 15px;
+            text-decoration: none;
+            background-color: var(--terciaria);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            position: absolute;
+            top: 60%;
+            left: 5%;
+        }
+
+        .coment {
+            width: 5vw;
+            height: 3.5vh;
+            font-size: 15px;
+            text-decoration: none;
+            border: 2px solid var(--terciaria);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            position: absolute;
+            top: 60%;
+            left:11%;
+
         }
 }
 /* ---------------------------------------- */
