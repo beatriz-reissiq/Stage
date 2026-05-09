@@ -12,10 +12,11 @@
     <nav>
         <div class="container-usuario">
             <div class="container-foto">
-                <img src="./assets/img/foto-perfil.jpg" alt="">
+                <img src="./assets/img/foto-perfil.png" alt="">
             </div>
             <p class="mensagem">Olá, Beatriz!</p>
             <a href="perfilAdm.html"></a>
+            <p class="titulo">Dashboard do Blog</p>
         </div> 
     </nav>
     <nav-left>
@@ -35,31 +36,36 @@
 
   <main>
 <div class="container-conteudo">
-
-    <div class="container-kpi">
-        <div class="KPI">
-            1. total de usuarios contribuintes
-            <p>Titulo</p>
-           <span class="valor">Valor</span>
-        </div>
-        <div class="KPI">
-            2. total de posts
-            <p>Titulo</p>
-           <span class="valor">Valor</span>
-        </div>
-        <div class="KPI">
-            3. total de interações
-            <p>Titulo</p>
-           <span class="valor">Valor</span>
-        </div>
-    </div>
-
     <div class="container-graficos">
         <div class="container-grafico-genero">
             <canvas id="graficoGenero"></canvas>
         </div>
+        
+        <div class="container-grafico-qtdPosts">
+            <canvas id="graficoQtdPosts"></canvas>
+        </div>
+
         <div class="container-grafico-idade">
             <canvas id="graficoIdade"></canvas>
+        </div>
+
+        <div class="container-grafico-engajamento">
+            <canvas id="graficoEngajamento"></canvas>
+        </div>
+    </div>
+
+    <div class="container-kpi">
+        <div class="KPI">
+            <span class="titulo">Total de Usuarios</span>
+           <span class="valor">60</span>
+        </div>
+        <div class="KPI">
+            <span class="titulo">Total de Posts</span>
+           <span class="valor">120</span>
+        </div>
+        <div class="KPI">
+            <span class="titulo">Total de Curtidas</span>
+           <span class="valor">1.2k</span>
         </div>
     </div>
 
@@ -69,6 +75,4 @@
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    
-</script>
+<script src="./graficos.js"></script>

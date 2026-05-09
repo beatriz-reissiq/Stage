@@ -87,6 +87,13 @@ header {
         margin-left: 10px;
     }
 
+    .titulo {
+        margin-left: 25vw;
+        font-size: 1.5rem;
+        color: var(--primaria);
+        font-weight: bold;
+    }
+
      nav-left {
         background-color: white;
         position: absolute;
@@ -126,15 +133,14 @@ main {
    
 }
     .container-kpi {
-        display: flex;
-        margin-left: 5vw;
         margin-top: 10vh;
-        width: 100vw;
-        height: 20vh;
-        justify-content: end;
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
         align-items: center;
-        gap: 5vw;
-
+        justify-content: center;
+        width: 30vw;
+        height: 90vh;
     }
 
     .KPI {
@@ -143,42 +149,58 @@ main {
         justify-content: end;
         align-items: end;
         background-color: white;
-        width: 18vw;
+        box-shadow: 0px 2px 11px 5px #00000018;
+        border-radius: 20px;
+        width: 15vw;
         height: 15vh;
-        margin-right: 2vw;
     }
 
-    .KPI p {
-        margin-right: 10px;
+    .KPI .titulo {
+        margin-right: 30px;
         font-size: 1.2rem;
+
     }
 
     .KPI .valor {
-        margin-right: 5px;
+        margin-bottom: 20px;
+        margin-right: 30px;
         font-size: 2rem;
     }
 
     .container-graficos {
-        position: absolute;
-        width: 95%;
-        height: 70vh;
-        top: 30%;
-        left: 5%;
+        margin-top: 10vh;
+        width: 70%;
+        height: 90vh;
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(2, 20vw);
     }
 
     .container-grafico-genero {
         width: 15vw;
         height: auto;
-        margin-left: 7vw;
-
+        margin-left: 10vw;
+        margin-top: 5vh;
     }
     .container-grafico-idade {
         width: 15vw;
         height: auto;
-        margin-left: 7vw;
-        margin-top: 2vh;
-
+        margin-left: 10vw;
     }
+    .container-grafico-qtdPosts {
+        width: 35vw;
+        height: auto;
+        margin-left: 10vw;  
+        margin-top: 5vh;    
+        
+    }
+    .container-grafico-engajamento {
+        width: 35vw;
+        height: auto;
+        margin-left: 10vw;    
+        
+    }
+
 
 
     
