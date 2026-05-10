@@ -3,7 +3,7 @@
 # 𖹭.ᐟ | Sobre o Projeto                           
 
  ׅ 𝄂𝄚𝅦𝄚𝄞𝅄ㅤ Stage é uma plataforma criada para ajudar pessoas que têm vontade de cantar ou tocar, mas enfrentam medo ou insegurança ao se expor.
-O site conta com um blog, como um espaço seguro onde usuários podem compartilhar experiências, desafios e conquistas, promovendo apoio mútuo e incentivando a expressão artística. ㅤ
+O site conta com um hub, como um espaço seguro onde usuários podem compartilhar experiências, desafios e conquistas, promovendo apoio mútuo e incentivando a expressão artística. ㅤ
 
 # ⁀➴ | Objetivo
 Incentivar pessoas a superarem a timidez e desenvolverem confiança para mostrar seus talentos musicais, criando um ambiente acolhedor e colaborativo.
@@ -20,7 +20,7 @@ O projeto surge como uma forma de oferecer apoio, mostrando que errar faz parte 
 
 # ᯓ‎♪ | Funcionalidades
 - Cadastro e login de usuários <br>
-- Publicação de posts (blog/comunidade) <br>
+- Publicação de posts (hub/comunidade) <br>
 - Perfil de usuário <br> 
 - Quiz interativo sobre gostos musicais <br>
 - Dashboard com resultados do quiz <br>
