@@ -26,63 +26,10 @@
 
         <button onclick="cadastrar()">Cadastrar</button>
         <small>Já tem cadastro? <a href="./login.html">Entre aqui.</small> </a>
+        <div id="mensagem"></div>
     </div>
+
   </main>
 </body>
 </html>
-
-<script>
-  function cadastrar() {
-  var nomeVar = ipt_nome.value;
-  var emailVar = ipt_email.value;
-  var senhaVar = ipt_senha.value;
-  var confirmacaoSenhaVar = ipt_confirmacao.value;
-  var vocacao = ipt_vocacao.value;
-
-  if (
-    nomeVar == "" ||
-    emailVar == "" ||
-    senhaVar == "" ||
-    confirmacaoSenhaVar == "" ||
-    vocacao == ""
-  ) {
-    alert("Preencha todos os campos!");
-    return false;
-  }
-
-  if (senhaVar != confirmacaoSenhaVar) {
-    alert("As senhas não coincidem!");
-    return false;
-  }
-
-
-  fetch("/usuarios/cadastrar", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      nomeServer: nomeVar,
-      emailServer: emailVar,
-      senhaServer: senhaVar,
-      vocacaoServer: vocacao
-    }),
-  })
-    .then(res => {
-      if (res.ok) {
-        alert("Cadastro realizado!");
-        setTimeout(() => {
-          window.location = "index.html";
-        }, 2000);
-      } else {
-        throw "Erro no cadastro";
-      }
-    })
-    .catch(err => {
-      console.log(err);
-    });
-
-  return false;
-}
-
-</script>
+<script src="./js/cadastro.js"></script>

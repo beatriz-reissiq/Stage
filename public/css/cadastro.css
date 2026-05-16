@@ -180,3 +180,10 @@ main {
         text-decoration: none;
         color: inherit;
     }
+
+    .mensagem {
+        color: var(--secundaria);
+        font-size: 0.9rem;
+        margin-top: 5vh;
+        text-align: center;
+    }
