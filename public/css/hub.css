@@ -1,0 +1,172 @@
+/* Declarando Cores ---------------------------------------- */
+:root {
+    --primaria: #5E3527;
+    --secundaria: #B39289;
+    --terciaria: #A1786E;
+}
+
+/* Declarando Fontes Personalizadas ---------------------------------------- */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caligrafia';
+    src: url('../assets/fonts/AlexBrush-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Heart';
+    src: url('../assets/fonts/Heart Bubble.otf')
+}
+/* ---------------------------------------- */
+*{
+    margin: 0px; 
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px
+}
+
+body {
+    background-color: white;
+    overflow: hidden;
+    }
+
+    button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+/* NAVBAR ---------------------------------------- */
+
+header {
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        min-height: 80px;
+        margin: 0px;
+        gap: 30vw;
+        border-bottom: 1px solid #5e352767;
+
+        .logo {
+            display: flex;
+            height: 50px;
+            margin-left: 70px;
+            margin-bottom: 10px;
+        }
+
+        .acess {
+            font-size: 15px;
+            text-decoration: none;
+            padding: 8px 20px;
+            background-color: var(--primaria);
+            color: white;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+
+    nav-left {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        background-color: white;
+        display: flex;
+        width: 10vw;
+        height: 100vh;
+        gap: 10px;
+        border-right: 1px solid #5e352767;
+    }
+
+
+    .forms {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin-left: 1vw;
+    }
+
+
+    .link {
+        margin-top: -10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    .link img {
+        width: 1.5vw;
+    }
+
+
+    .link .titulo {
+        color: var(--secundaria);
+        font-weight: bold;
+        margin-left: 0.5vw;
+        font-size: 1rem;
+    }
+
+    .link a {
+        text-decoration: none;
+    }
+}
+/* ---------------------------------------- */
+
+/* MAIN ---------------------------------------- */
+
+main {
+    margin-top: 80px;
+    margin-left: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* define a altura do elemento usando cálculo */
+    /* 100vh = 100% da altura da tela */
+    height: calc(100vh - 80px);
+
+    overflow-y: auto; /* adiciona rolagem vertical apenas se necessário */
+    padding: 20px;
+}
+
+.container-conteudo {
+    margin-top: 5vh;
+    background-color: pink;
+    border-radius: 10px;
+    padding: 15px;
+    width: 70%;
+    height: 40vh;
+}
+
+.cardPost .titulo {
+    color: var(--primaria);
+    margin-bottom: 1vh;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.cardPost .comentario {
+    color: black;
+    border: 1px solid var(--secundaria);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    align-items: start;
+}
