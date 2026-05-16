@@ -130,7 +130,7 @@ new Chart(grfPosts, {
         scales: {
             y: {
                 beginAtZero: true
-            }
+            },
         }
     }
 });

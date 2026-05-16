@@ -1,0 +1,48 @@
+  <div class="cards"> <!-- CONTEÚDO 2 -->
+                Como Ganhar Confiança
+           </div>
+
+            <div class="cards"> <!-- CONTEÚDO 3 -->
+               Guias Rápidos------------------------------------------------
+
+               <button id="btnViolao">
+                    Como começar no violão 🎸
+                </button>
+
+                <div id="conteudoViolao">
+                    <p>
+                        Aprender violão pode parecer difícil no início, mas tudo começa com pequenos passos. Foque primeiro nos acordes básicos, 
+                        pratique trocas simples e escolha músicas que você goste de ouvir. Não se cobre para tocar perfeitamente logo no começo — 
+                        a prática constante é o que realmente faz diferença. Mesmo alguns minutos por dia já ajudam no seu desenvolvimento.
+                    </p>
+                </div>
+
+                <button id="btnAfinacao">
+                    Como melhorar a afinação 🎤
+                </button>
+
+                <div id="conteudoAfinacao">
+                    <p>
+                        Melhorar a afinação exige treino, paciência e atenção ao som da própria voz. Uma boa forma de começar é cantar junto com músicas
+                        mais calmas e tentar acompanhar as notas com cuidado. Ouvir bastante música, praticar exercícios vocais e gravar sua própria voz 
+                        também pode ajudar a perceber sua evolução ao longo do tempo. O mais importante é não desistir por medo de errar.
+                    </p>
+                </div>
+
+                <button id="btnVergonha">
+                    Como perder a vergonha de cantar 
+                </button>
+
+                <div id="conteudoVergonha">
+                    <p>
+                       Sentir vergonha ao cantar é algo muito comum, principalmente no começo. Muitas vezes o medo do julgamento acaba sendo 
+                       maior do que a vontade de se expressar. Tente começar em ambientes onde você se sinta confortável, como sozinho no quarto ou 
+                       perto de pessoas de confiança. Aos poucos, pequenas experiências ajudam a construir mais segurança e confiança. 
+                       Você não precisa ser perfeito para mostrar seu talento — apenas ter coragem de começar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cards"> <!-- CONTEÚDO 4 -->
+              Mensagem Bonita ------------------------------------------------
+            </div>

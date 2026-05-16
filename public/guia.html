@@ -16,82 +16,124 @@
         <div class="link">
         <a class="link" href="index.html">Home</a>
         <a class="link" href="hub.html">Stage Hub</a>
-        <a class="link" href="quiz.html">Quiz</a>
+        <a class="link" href="guia.html">Guia</a>
         </div>
         
         <div class="forms">
-            <button><a class="acess" href="cadastro.html">Participe</a></button>
+            <button><a class="acess" href="cadastro.html">Cadastre-se</a></button>
         </div>
     </nav>
   </header>
 
   <main>
     <div class="container-conteudo">
-
-        <div class="titulo">
-            <span>Guia Musical</span>
-            <span>Aqui você encontrará conteúdos, dicas e recomendações pensados para ajudar no 
+        <div class="container-header">
+            <img src="./assets/img/logo_dicas.png" alt="">
+        <div class="header">
+            <span class="titulo">GUIA MUSICAL</span>
+            <div class="texto">Aqui você encontrará conteúdos, dicas e recomendações pensados para ajudar no 
                 seu desenvolvimento musical. Seja para aprender algo novo, ganhar mais confiança ou 
-                encontrar inspiração, este espaço foi criado para apoiar cada passo da sua jornada artística.</span>
+                encontrar inspiração, este espaço foi criado para apoiar cada passo da sua jornada artística.</div>
         </div>
-
+        </div>
+        <hr class="horizontalA">
         <div class="container-cards">
-            <div class="cards"> <!-- CONTEÚDO 1 -->
-                <span>Sites e Canais para Aprender Música</span> ------------------------------------------------
+            <div class="cards">
+               <div class="titulo">Sites e Canais para Aprender Música</div>
+               <div class="container-sites">
 
-            </div>
-
-            <div class="cards"> <!-- CONTEÚDO 2 -->
-                Como Ganhar Confiança ------------------------------------------------
-            </div>
-
-            <div class="cards"> <!-- CONTEÚDO 3 -->
-                Guias Rápidos------------------------------------------------
-
-                <button id="btnViolao">
-                    Como começar no violão 🎸
-                </button>
-
-                <div id="conteudoViolao">
-                    <p>
-                        Aprender violão pode parecer difícil no início, mas tudo começa com pequenos passos. Foque primeiro nos acordes básicos, 
-                        pratique trocas simples e escolha músicas que você goste de ouvir. Não se cobre para tocar perfeitamente logo no começo — 
-                        a prática constante é o que realmente faz diferença. Mesmo alguns minutos por dia já ajudam no seu desenvolvimento.
-                    </p>
+                <div class="conteudo-site">
+                    <div class="link">
+                <a href="https://www.youtube.com/@cifraclub">
+               <img src="./assets/img/cifraclub_logo.png" alt="">
+                </a>
+                <hr class="verticalA">
+                </div>
+                <div class="conteudo-texto">
+                <div class="subtitulo">Cifra Club</div>
+                <div class="descricao">Uma das plataformas musicais mais conhecidas do Brasil, com cifras, 
+                    aulas e conteúdos para quem deseja aprender instrumentos e canto de forma prática. 
+                    O site oferece materiais para iniciantes e músicos mais experientes. Além disso, tem um canal
+                no youtube com aulas intuitivas e didáticas.</div>
+                    </div>
+                </div>
+                
+                
+                <div class="conteudo-site">
+                <a href="https://www.youtube.com/@DescomplicandoMusica">
+               <img src="./assets/img/logo_descomplica.jpg" alt="">
+                </a>
+                <hr class="verticalB">
+               <div class="conteudo-texto">
+                <div class="subtitulo">Descomplicando a Música</div>
+                <div class="descricao">Plataforma voltada para o aprendizado musical de forma simples e acessível, 
+                     trazendo conteúdos educativos, teoria musical e dicas para quem deseja evoluir na
+                     música sem complicação.</div>
+                    </div>
                 </div>
 
-                <button id="btnAfinacao">
-                    Como melhorar a afinação 🎤
+                <div class="conteudo-site">
+                <a href="https://yousician.com/pt_BR/">
+               <img src="./assets/img/logo_yousi.png" alt="">
+                </a>
+                <hr class="verticalB">
+                <div class="conteudo-texto">
+                    <div class="subtitulo">Yousician</div>
+                    <div class="descricao">Aplicativo interativo que auxilia no aprendizado de instrumentos e canto através de exercícios práticos e 
+                        acompanhamento em tempo real. É uma ótima opção para quem gosta de aprender 
+                        de maneira dinâmica e divertida.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <hr class="horizontalB">   
+        
+            <div class="container-guias">
+                <button id="btnViolao">
+                <img src="./assets/img/background_dicas_violao.png" alt=""> Como Iniciar no Violão
                 </button>
 
+                <button id="btnAfinacao">
+                    <img src="./assets/img/background_dicas_afinacao.png" alt="">Como Treinar Afinação
+                </button>
+
+                <button id="btnVergonha">
+                    Como Vencer a Vergonha de Apresentações
+                </button>
+            </div> 
+
+            <div class="container-texto-botao">
+                <div id="conteudoViolao">
+                    <div class="texto">
+                        Foque primeiro nos acordes básicos, 
+                        pratique trocas simples e escolha músicas que você goste de ouvir. <br> <br>A prática constante é o que realmente faz diferença. 
+                        Mesmo alguns minutos por dia já ajudam no seu desenvolvimento.
+                    </div>
+                    <img src="./assets/img/balao-fala.jpg" alt=""> 
+                </div>
+
                 <div id="conteudoAfinacao">
-                    <p>
+                    <div class="texto">
                         Melhorar a afinação exige treino, paciência e atenção ao som da própria voz. Uma boa forma de começar é cantar junto com músicas
                         mais calmas e tentar acompanhar as notas com cuidado. Ouvir bastante música, praticar exercícios vocais e gravar sua própria voz 
                         também pode ajudar a perceber sua evolução ao longo do tempo. O mais importante é não desistir por medo de errar.
-                    </p>
+                    </div>
+                    <img src="./assets/img/balao-fala.jpg" alt=""> 
                 </div>
-
-                <button id="btnVergonha">
-                    Como perder a vergonha de cantar 
-                </button>
-
+                
                 <div id="conteudoVergonha">
                     <p>
-                       Sentir vergonha ao cantar é algo muito comum, principalmente no começo. Muitas vezes o medo do julgamento acaba sendo 
+                       Sentir vergonha ao se aprentar é algo muito comum, principalmente no começo. Muitas vezes o medo do julgamento acaba sendo 
                        maior do que a vontade de se expressar. Tente começar em ambientes onde você se sinta confortável, como sozinho no quarto ou 
                        perto de pessoas de confiança. Aos poucos, pequenas experiências ajudam a construir mais segurança e confiança. 
                        Você não precisa ser perfeito para mostrar seu talento — apenas ter coragem de começar.
                     </p>
                 </div>
             </div>
-
-            <div class="cards"> <!-- CONTEÚDO 4 -->
-                Mensagem Bonita ------------------------------------------------
-            </div>
-        </div>
-    </div>
+            
+            
   </main>
 </body>
 </html>
-<script src="./script/guia.js"></script>
+<script src="./script/guia.js"></script> 

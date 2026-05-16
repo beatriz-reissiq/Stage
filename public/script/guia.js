@@ -1,46 +1,43 @@
-const btnViolao = document.getElementById('btnViolao');
-const conteudoViolao = document.getElementById('conteudoViolao');
+// window.onload = function () {
+//    if (sessionStorage.ID_USUARIO) {
+//        document.getElementById("btnParticipe").style.display = "none";
+//        } else {
+//            alert('Você precisa estar logado!')
+//            window.location.href = "login.html"
+//            return false
+//        }
+//    }
+
+let conteudoViolao = document.getElementById('conteudoViolao');
+let conteudoAfinacao = document.getElementById('conteudoAfinacao');
+let conteudoVergonha = document.getElementById('conteudoVergonha');
+
+let btnViolao = document.getElementById('btnViolao');
+let btnAfinacao = document.getElementById('btnAfinacao');
+let btnVergonha = document.getElementById('btnVergonha');
 
 btnViolao.onclick = function () {
 
-    if (conteudoViolao.style.display == 'block') {
+    conteudoAfinacao.style.display = 'none';
+    conteudoVergonha.style.display = 'none';
 
-        conteudoViolao.style.display = 'none';
-
-    } else {
-
-        conteudoViolao.style.display = 'block';
-    }
+    conteudoViolao.style.display = 'block';
 }
 
-
-const btnAfinacao = document.getElementById('btnAfinacao');
-const conteudoAfinacao = document.getElementById('conteudoAfinacao');
 
 btnAfinacao.onclick = function () {
 
-    if (conteudoAfinacao.style.display == 'block') {
+    conteudoViolao.style.display = 'none';
+    conteudoVergonha.style.display = 'none';
 
-        conteudoAfinacao.style.display = 'none';
-
-    } else {
-
-        conteudoAfinacao.style.display = 'block';
-    }
+    conteudoAfinacao.style.display = 'block';
 }
 
 
-const btnVergonha = document.getElementById('btnVergonha');
-const conteudoVergonha = document.getElementById('conteudoVergonha');
-
 btnVergonha.onclick = function () {
 
-    if (conteudoVergonha.style.display == 'block') {
+    conteudoViolao.style.display = 'none';
+    conteudoAfinacao.style.display = 'none';
 
-        conteudoVergonha.style.display = 'none';
-
-    } else {
-
-        conteudoVergonha.style.display = 'block';
-    }
+    conteudoVergonha.style.display = 'block';
 }

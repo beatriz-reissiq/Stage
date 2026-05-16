@@ -166,7 +166,6 @@ main {
         margin-right: 30px;
         font-size: 1.2rem;
         font-weight: bold;
-
     }
 
     .KPI .valor {
@@ -179,7 +178,6 @@ main {
         margin-top: 10vh;
         width: 70%;
         height: 90vh;
-        display: grid;
         display: grid;
         grid-template-columns: repeat(2, 20vw);
     }
