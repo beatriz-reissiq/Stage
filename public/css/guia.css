@@ -177,6 +177,13 @@ header {
         border-radius: 50px;
     }
 
+    .setinha {
+        position: absolute;
+        left: 5%;
+        bottom: 2%;
+        width: 6vw;
+    }
+
     .subtitulo {
         font-size: 1.5rem;
         font-weight: bold;

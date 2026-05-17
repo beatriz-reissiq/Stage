@@ -31,14 +31,18 @@
 
 body {
     background-color: white;
-    }
+}
 
     button {
         border: none;
         background: none;
         outline: none;
         cursor: pointer;
-    }
+}
+
+a {
+    text-decoration: none;
+}
 
 /* NAVBAR ---------------------------------------- */
 header {
