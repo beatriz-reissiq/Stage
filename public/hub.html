@@ -10,46 +10,69 @@
     <header>
       <nav-left>
         <div class="forms">
+
           <div class="link"> 
-            <img src="./assets/img/home-icon.png" alt=""> 
-            <a href="">
-              <div class="titulo">Página Inicial</div>
+            <img src="./assets/img/inicial-icon.png" alt=""> 
+            <a href="./hubById.html">
+              <div class="titulo">Início</div>
             </a>
           </div>
-        
+
           <div class="link"> 
             <img src="./assets/img/post-icon.png" alt=""> 
-            <a href="">
+            <a href="./hubById.html">
               <div class="titulo">Meus Posts</div>
             </a>
           </div>
 
           <div class="link"> 
-            
             <img src="./assets/img/popular-icon.png" alt=""> 
-            <a href="">
-              <div class="titulo">Em alta</div>
-            </a>
+              <div class="titulo" onclick="buscarEmAlta()">Em alta</div>
           </div>
+
+          
         
         </div>
     </nav-left>
 
     <nav>
-        <div class="logo">
-            <img src="./assets/img/logo.png" alt=""> 
+        <div class="logo"> 
+           <a href="./index.html"><img src="./assets/img/logo.png" alt=""></a>
         </div>
-        <input type="text" id="ipt_pesquisar">
+        <input type="text" id="ipt_pesquisar" placeholder="🔍︎" oninput="pesquisar()">
         <div class="forms">
-            <a id="btnParticipe" class="acess" href="cadastro.html">Cadastre-se</a>
+            
         </div>
     </nav>
     </header>
 
     <main>
-      
+      <div class="container-feed">
+        <div id="feedPosts"></div>
+    </div>
+      <div class="div_mensagem"></div>
     </main>
 
 </body>
 </html>
 <script src="./js/hub.js"></script>
+
+<script>
+ function pesquisar() {
+
+    let input = ipt_pesquisar.value.toLowerCase();
+    let posts = document.getElementsByClassName("cardPost");
+
+    for (let i = 0; i < posts.length; i++) {
+
+        let conteudo = posts[i].innerHTML.toLowerCase();
+        if (conteudo.includes(input)) {
+            posts[i].style.display = "block";
+        } else {
+            posts[i].style.display = "none";
+            div_mensagem.innerHTML = "Nenhum resultado encontrado :❨"
+        }
+    }
+}
+
+</script>

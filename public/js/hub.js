@@ -52,8 +52,6 @@ function listarPosts() {
         });
 }
 
-
-
 function curtir(idPost, indice) {
 
     const coracao = document.getElementById(`coracao${indice}`);
@@ -82,6 +80,47 @@ function curtir(idPost, indice) {
     }
 
     curtidas.innerHTML = numeroCurtidas;
+}
+
+function buscarEmAlta() {
+
+    fetch("/postagens/emAlta")
+        .then(function (resposta) {
+            return resposta.json();
+        })
+
+        .then(function (posts) {
+            const feed = document.getElementById('feedPosts');
+
+            feed.innerHTML = "";
+            for (let i = 0; i < posts.length; i++) {
+
+                feed.innerHTML += `
+                    <div class="container-conteudo">
+                        <div class="conteudo-post">
+                            <div class="cardPost">
+                                <div class="titulo">
+                                    ${posts[i].titulo}
+                                </div>
+                                <div class="subtitulo">
+                                    <small>${posts[i].vocacao}</small>
+                                </div>
+                                <div class="comentario">
+                                    ${posts[i].descricao}
+                                </div>
+                                <button class="botaoCurtida">
+                                    ❤️ ${posts[i].curtidas}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        })
+
+        .catch(function (erro) {
+            console.log("Erro ao buscar posts:", erro);
+        });
 }
 
 listarPosts();

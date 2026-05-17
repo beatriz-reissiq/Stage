@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Posts</title>
+    <link rel="stylesheet" href="./css/hubById.css">
+</head>
+<body>
+    <header>
+      <nav-left>
+        <div class="forms">
+        
+          <div class="link"> 
+            <img src="./assets/img/post-icon.png" alt=""> 
+            <a href="./hubById.html">
+              <div class="titulo">Meus Posts</div>
+            </a>
+          </div>
+
+           <div class="link"> 
+            <img src="./assets/img/inicial-icon.png" alt=""> 
+            <a href="./hubById.html">
+              <div class="titulo">Início</div>
+            </a>
+          </div>
+    </nav-left>
+
+    <nav>
+        <div class="logo"> 
+           <a href="./index.html"><img src="./assets/img/logo.png" alt=""></a>
+        </div>
+        <input type="text" id="ipt_pesquisar" placeholder="🔍︎ Buscar nos meus posts" oninput="pesquisar()">
+        <div class="forms">
+            
+        </div>
+    </nav>
+    </header>
+
+    <main>
+        
+    <div class="container-adicionar" id="areaPostagem" style="display: none;"> 
+        <div class="titulo"> ـــﮩ٨ـ Descreva abaixo a sua experiência musical ــ</div>
+        <div class="container-texto">
+        <div class="subtitulo">Adicione um título para o seu post:</div>
+        <input type="text" id="inputTitulo" class="iptTitulo">
+        <textarea id="inputDescricao" class="iptComent" placeholder="Digite aqui..."></textarea>
+        </div>
+        <button onclick="publicar()" class="btnPublicar" id="botaoPublicar">Publicar</button>
+    </div>
+
+    <button onclick="exibir()" class="btnAdicionar" id="botaoAdicionar">↗ Adicionar Post</button>
+        <div class="container-feed">
+           <div id="feedPosts"></div>
+        </div>
+         <div class="div_mensagem"></div>
+
+    </main>
+
+</body>
+</html>
+<script>
+    window.onload = function () {
+    document.getElementById('botaoAdicionar').style.display = 'block';
+};
+
+   function exibir() {
+    document.getElementById('botaoAdicionar').style.display = 'none';
+    document.getElementById('areaPostagem').style.display = 'flex';
+}
+
+    function publicar() {
+    alert("Post publicado com sucesso!");
+    document.getElementById('areaPostagem').style.display = 'none';
+    document.getElementById('botaoAdicionar').style.display = 'block';
+}
+
+    function pesquisar() {
+    
+    let input = ipt_pesquisar.value.toLowerCase();
+    let posts = document.getElementsByClassName("cardPost");
+
+    for (let i = 0; i < posts.length; i++) {
+
+        let conteudo = posts[i].innerHTML.toLowerCase();
+        if (conteudo.includes(input)) {
+            posts[i].style.display = "block";
+        } else {
+            posts[i].style.display = "none";
+            div_mensagem.innerHTML = "Nenhum resultado encontrado :❨"
+        }
+    }
+}
+
+ 
+</script>

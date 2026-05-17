@@ -28,6 +28,19 @@ function curtir(req, res) {
         });
 }
 
+function emAlta(req, res) {
+
+    postagemModel.emAlta()
+        .then(function (resultado) {
+            res.json(resultado);
+        })
+
+        .catch(function (erro) {
+            console.log(erro);
+            res.status(500).json(erro);
+        });
+}
+
 module.exports = {
 
     listar,

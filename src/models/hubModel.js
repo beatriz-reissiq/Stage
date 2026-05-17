@@ -27,6 +27,26 @@ function curtir(idPost) {
     return database.executar(instrucaoSql);
 }
 
+function emAlta() {
+
+    var instrucaoSql = `
+    
+        select
+        postagem.idPostagem,
+        postagem.titulo,
+        postagem.descricao,
+        postagem.curtidas,
+        usuario.nome,
+        usuario.vocacao
+        from postagem
+        join usuario
+        on postagem.fkUsuario = usuario.id
+        order by postagem.curtidas desc;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     listar,
     curtir
