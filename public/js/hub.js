@@ -1,14 +1,13 @@
-// window.onload = function () {
-//    if (sessionStorage.ID_USUARIO) {
-//        document.getElementById("btnParticipe").style.display = "none";
-//        } else {
-//            alert('Você precisa estar logado!')
-//            window.location.href = "login.html"
-//            return false
-//        }
-//    }
+ window.onload = function () {
+    if (sessionStorage.ID_USUARIO) {
+        document.getElementById("btnParticipe").style.display = "none";
+        } else {
+            alert('Você precisa estar logado!')
+            window.location.href = "login.html"
+            return false
+        }
+    }
 
-// listar os posts do banco
 function listarPosts() {
 
     fetch("/postagens/listar")
