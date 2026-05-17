@@ -196,7 +196,7 @@ main {
 
             .violao {
                 width: 42vh;
-                height: 41vh;
+                height: 41.5vh;
                 margin-left: 12rem;
                 box-shadow: -34px 23px 0px 5px var(--primaria);
             }
@@ -247,7 +247,7 @@ main {
 
             .card  {
                 width: 18vw;
-                height: 38vh;
+                height: 36vh;
                 margin-top: 40px;
                 box-shadow: -34px 23px 0px 5px var(--primaria);
                 justify-content: column;

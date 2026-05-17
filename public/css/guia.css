@@ -228,7 +228,7 @@ header {
     .container-guias {
         width: 80%;
         height: 45vh;
-        margin-top: 5vh;
+        margin-top: 10vh;
         display: flex;
         gap: 5vw;
     }
@@ -252,9 +252,9 @@ header {
 #conteudoViolao {
     width: 22vw;
     margin-right: 56vw;
-    margin-top: 10vh;
+    margin-top: 15vh;
     display: none;
-    padding: 5px;
+    padding: 10px;
     background-color: var(--secundaria);
     border-radius: 20px;
     font-size: 1.1rem;
@@ -263,9 +263,9 @@ header {
 
 #conteudoAfinacao {
     width: 22vw;
-    margin-top: 10vh;
+    margin-top: 15vh;
     display: none;
-    padding: 5px;
+    padding: 10px;
     background-color: var(--secundaria);
     border-radius: 20px;
     font-size: 1.1rem;
@@ -276,9 +276,9 @@ header {
     width: 22vw;
     margin-right: -10vw;
     margin-left: 47vw;
-    margin-top: 14vh;
+    margin-top: 15vh;
     display: none;
-    padding: 5px;
+    padding: 10px;
     background-color: var(--secundaria);
     border-radius: 20px;
     font-size: 1.1rem;
@@ -301,26 +301,23 @@ header {
         color: white;
         margin-top: 5vh;
         margin-left: 3vw;
+        font-size: 2rem;
     }
 
     .container-desafio .subtitulo {
         width: 90%;
         color: var(--secundaria);
         margin-left: 3vw;
+        font-size: 1.3rem;
     }
     .sugestoes {
         width: 70%;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         color: white;
-        margin-top: 1vh;
+        margin-top: 2vh;
     }
 
     .sugestoes a {
         color: var(--secundaria);
     }
 
-    .rodape {
-        color: white;
-        width: 6%;
-        margin-top: 2vh;
-    }
