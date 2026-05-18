@@ -79,3 +79,15 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/graficos.js"></script>
 <script src="./js/dashboard.js"></script>
+<script>
+    window.onload = function () {
+    validarDashboard();
+}
+
+function validarDashboard() {
+    var adm = sessionStorage.ADM;
+    if (adm != "true") {
+        window.location = "hub.html";
+    }
+}
+</script>

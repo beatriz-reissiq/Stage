@@ -24,6 +24,7 @@ function autenticar() {
     })
     .then(data => {
 
+        sessionStorage.ADM = data.Adm;
         sessionStorage.ID_USUARIO = data.id;
         sessionStorage.NOME_USUARIO = data.nome;
 

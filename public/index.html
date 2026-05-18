@@ -23,6 +23,11 @@
         <div class="forms">
             <a id="btnParticipe" class="acess" href="cadastro.html">Cadastre-se</a>
         </div>
+
+        <div class="forms">
+            <a id="btnDashboard" class="acess" href="dashboard.html">Dashboard</a>
+        </div>
+
     </nav>
     
     <div class="container-banner">
@@ -105,6 +110,21 @@
 </body>
 </html>
 <script>
+    window.onload = function () {
+    verificarAdm();
+}
+
+function verificarAdm() {
+    let adm = sessionStorage.ADM;
+    if (adm == "true") {
+        document.getElementById("btnDashboard")
+            .style.display = "block";
+    } else {
+        document.getElementById("btnDashboard")
+            .style.display = "none";
+    }
+}
+
     window.onload = function () {
     if (sessionStorage.ID_USUARIO) {
         document.getElementById("btnParticipe").style.display = "none";
