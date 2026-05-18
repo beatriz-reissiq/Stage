@@ -3,6 +3,10 @@ var router = express.Router();
 var postagemController = require("../controllers/postagemController");
 
 
+router.post("/publicar", function (req, res) {
+    postagemController.publicar(req, res);
+});
+
 router.get("/listar", function (req, res) {
     postagemController.listar(req, res);
 });
@@ -15,11 +19,8 @@ router.post("/curtir", function (req, res) {
     postagemController.curtir(req, res);
 });
 
-router.post("/publicar", function (req, res) {
-    postagemController.publicar(req, res);
-});
 
-router.get("/listarMeusPosts/:idUsuario", function (req, res) {
+router.get("/listarMeusPosts/:fkUsuario", function (req, res) {
     postagemController.listarMeusPosts(req, res);
 });
 

@@ -41,7 +41,9 @@
           window.location = "login.html";
         }, 2000);
       } else {
-        mensagem.innerHTML = " ⚠︎ Erro ao realizar cadastro.";
+        mensagem.innerHTML = "⚠︎ Erro ao realizar cadastro.";
+        setTimeout(() => {
+        }, 1000);
       }
     })
     .catch(err => {

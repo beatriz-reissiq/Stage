@@ -1,5 +1,32 @@
 var postagemModel = require("../models/postagemModel");
 
+function publicar(req, res) {
+
+    console.log("ENTROU NO PUBLICAR");
+
+   //var titulo = inputTitulo.value;
+   //var descricao = inputDescricao.value;
+   //var id = sessionStorage.ID_USUARIO;
+
+    var titulo = req.body.tituloServer;
+    var descricao = req.body.descricaoServer;
+    var fkUsuario = req.body.fkUsuarioServer;
+
+    postagemModel.publicar(titulo, descricao, fkUsuario)
+
+        .then(function(resultado) {
+
+            res.json(resultado);
+        })
+
+        .catch(function(erro) {
+
+            console.log(erro);
+
+            res.status(500).json(erro);
+        });
+}
+
 function listar(req, res) {
     postagemModel.listar()
         .then(function (resultado) {
@@ -39,27 +66,11 @@ function curtir(req, res) {
         });
 }
 
-function publicar(req, res) {
-    var titulo = req.body.tituloServer;
-    var descricao = req.body.descricaoServer;
-    var idUsuario = req.body.idUsuarioServer;
-
-
-    postagemModel.publicar(titulo, descricao, idUsuario)
-        .then(function (resultado) {
-            res.json(resultado);
-        })
-
-        .catch(function (erro) {
-            console.log(erro);
-            res.status(500).json(erro);
-        });
-}
 
 
 function listarMeusPosts(req, res) {
-    var idUsuario = req.params.idUsuario;
-    postagemModel.listarMeusPosts(idUsuario)
+    var fkUsuario = req.params.fkUsuario;
+    postagemModel.listarMeusPosts(fkUsuario)
 
         .then(function (resultado) {
             res.json(resultado);

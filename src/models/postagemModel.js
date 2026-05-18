@@ -1,5 +1,17 @@
 var database = require("../database/config");
 
+function publicar(titulo, descricao, idUsuario) {
+
+    console.log("MODEL PUBLICAR");
+
+    var instrucaoSql = `
+        insert into postagem
+        (titulo, descricao, fkUsuario) values ('${titulo}', '${descricao}', ${idUsuario});`;
+
+    console.log(instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function listar() {
     var instrucaoSql = `
         select
@@ -48,24 +60,14 @@ function curtir(idPost) {
     return database.executar(instrucaoSql);
 }
 
-function publicar(titulo, descricao, idUsuario) {
-    var instrucaoSql = `
-        insert into postagem
-        (titulo, descricao, fkUsuario)
-        values
-        ('${titulo}', '${descricao}', ${idUsuario});
-    `;
-    return database.executar(instrucaoSql);
-}
-
-function listarMeusPosts(idUsuario) {
+function listarMeusPosts(id) {
     var instrucaoSql = `
         select
         titulo,
         descricao,
         curtidas
         from postagem
-        where fkUsuario = ${idUsuario}
+        where fkUsuario = ${id}
         order by idPostagem desc;
     `;
     return database.executar(instrucaoSql);

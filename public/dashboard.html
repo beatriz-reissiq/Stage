@@ -59,15 +59,15 @@
     <div class="container-kpi">
         <div class="KPI">
             <span class="titulo">Total de Usuarios</span>
-           <span class="valor">60</span>
+           <span class="valor"></span>
         </div>
         <div class="KPI">
             <span class="titulo">Total de Posts</span>
-           <span class="valor">120</span>
+           <span class="valor"></span>
         </div>
         <div class="KPI">
             <span class="titulo">Total de Curtidas</span>
-           <span class="valor">1.2k</span>
+           <span class="valor"></span>
         </div>
     </div>
 
@@ -86,7 +86,7 @@
 
 function validarDashboard() {
     var adm = sessionStorage.ADM;
-    if (adm != "true") {
+    if (adm != 1) {
         window.location = "hub.html";
     }
 }

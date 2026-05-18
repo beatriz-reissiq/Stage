@@ -1,3 +1,7 @@
+const express = require("express");
+const router = express.Router();
+const dashboardController = require("../controllers/dashboardController");
+
 router.get("/graficoGenero", function(req, res){
     dashboardController.graficoGenero(req, res);
 });
@@ -25,3 +29,5 @@ router.get("/totalPosts", function(req, res){
 router.get("/totalCurtidas", function(req, res){
     dashboardController.totalCurtidas(req, res);
 });
+
+module.exports = router;

@@ -20,13 +20,22 @@
         <a class="link" href="guia.html">Guia</a>
         </div>
         
+        <div class="espaco"></div>
+        
+    <div class="main-forms">
         <div class="forms">
-            <a id="btnParticipe" class="acess" href="cadastro.html">Cadastre-se</a>
+            <a id="btnCadastro" class="acess" href="cadastro.html">Cadastre-se</a>
         </div>
-
         <div class="forms">
-            <a id="btnDashboard" class="acess" href="dashboard.html">Dashboard</a>
+            <a id="btnLogin" class="acess" href="login.html">Entrar</a>
         </div>
+        <div class="forms" id="formsDash" style="display: none;">
+            <a id="btnDashboard" class="acess" href="dashboard.html" style="display: none;">Dashboard</a>
+        </div>
+        <div class="forms">
+            <button onclick="sair()" class="exit" id="btnSair" style="display: none;">Sair</button>
+        </div>
+    </div>
 
     </nav>
     
@@ -112,27 +121,27 @@
 <script>
     window.onload = function () {
     verificarAdm();
+    alterarBotao();
 }
 
 function verificarAdm() {
     let adm = sessionStorage.ADM;
-    if (adm == "true") {
-        document.getElementById("btnDashboard")
-            .style.display = "block";
+    if (adm == 1) {
+        document.getElementById("btnDashboard").style.display = "block";
+        document.getElementById("formsDash").style.display = "block";
     } else {
-        document.getElementById("btnDashboard")
-            .style.display = "none";
     }
 }
 
-    window.onload = function () {
+    function alterarBotao() {
     if (sessionStorage.ID_USUARIO) {
-        document.getElementById("btnParticipe").style.display = "none";
+        document.getElementById("btnCadastro").style.display = "none";
+        document.getElementById("btnLogin").style.display = "none";
+        document.getElementById("btnSair").style.display = "block";
     }
-
-    if(sessionStorage.ID_USUARIO) {
-        document.getElementById("perfilUsuario").style.display
-    } 
-    // nao sei ainda como faz :/
 }
+    function sair() {
+        sessionStorage.clear();
+        window.location = "index.html"
+    }
 </script>

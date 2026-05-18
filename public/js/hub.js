@@ -29,8 +29,12 @@ function listarPosts() {
                                 ${posts[i].titulo}
                             </div>
                             <div class="subtitulo">
+                                <small><b>${posts[i].nome}</b></small>
+                            </div>
+                            <div class="subtitulo">
                                 <small>${posts[i].vocacao}</small>
                             </div>
+                            
                             <div class="comentario">
                                 ${posts[i].descricao}
                             </div>

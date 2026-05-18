@@ -58,13 +58,12 @@ function completarPerfil(req, res){
 
     var genero = req.body.generoServer;
     var idade = req.body.idadeServer;
-    var idUsuario = req.body.idUsuarioServer;
+    var id = req.body.idUsuarioServer;
 
     usuarioModel.completarPerfil(
         genero,
         idade,
-        vocacao,
-        idUsuario
+        id
     )
 
     .then(function(resultado){

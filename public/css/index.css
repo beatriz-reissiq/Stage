@@ -76,6 +76,14 @@ header {
             }
         }
 
+        .espaco {
+            width: 50%;
+        }
+
+        .main-forms {
+            display: flex;
+            flex-direction: row;
+        }
         .forms {
             margin-left: auto;
             margin-right: 60px;
@@ -88,6 +96,17 @@ header {
             color: white;
             border-radius: 8px;
             border: none;
+            cursor: pointer;
+        }
+
+        .exit {
+            width: 5vw;
+            height: 3.5vh;
+            font-size: 15px;
+            text-decoration: none;
+            border: 2px solid var(--terciaria);
+            color: white;
+            border-radius: 8px;
             cursor: pointer;
         }
         }
@@ -137,7 +156,6 @@ header {
             position: absolute;
             top: 60%;
             left:11%;
-
         }
 }
 /* ---------------------------------------- */
@@ -251,7 +269,7 @@ main {
 
             .card  {
                 width: 18vw;
-                height: 36vh;
+                height: 38vh;
                 margin-top: 40px;
                 box-shadow: -34px 23px 0px 5px var(--primaria);
                 justify-content: column;

@@ -10,6 +10,7 @@ require("dotenv").config({ path: ".env.dev" });
 var express = require("express");
 var cors = require("cors");
 var path = require("path");
+var app = express();
 var PORTA_APP = process.env.APP_PORT;
 var HOST_APP = process.env.APP_HOST;
 
@@ -18,15 +19,15 @@ var usuarioRouter = require("./src/routes/usuarios");
 var postagemRouter = require("./src/routes/postagens");
 var dashboardRouter = require("./src/routes/dashboard");
 
-var app = express();
-app.use("/dashboard", dashboardRouter);
-app.use("/postagens", postagemRouter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
+
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
+app.use("/dashboard", dashboardRouter);
+app.use("/postagens", postagemRouter);
 
 
 app.listen(PORTA_APP, function () {

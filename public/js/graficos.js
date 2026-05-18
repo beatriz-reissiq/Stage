@@ -9,7 +9,7 @@ new Chart(grfGenero, {
         datasets: [{
             label: 'Usuários',
 
-            data: [10, 15],
+            data: [],
 
             backgroundColor: [
                 '#5E3527',
@@ -47,7 +47,7 @@ new Chart(grfIdade, {
         datasets: [{
             label: 'Usuários',
 
-            data: [10, 30, 20],
+            data: [],
 
             backgroundColor: [
                 '#5E3527',
@@ -82,18 +82,12 @@ new Chart(grfPosts, {
     type: 'bar',
 
     data: {
-        labels: [
-            'Janeiro',
-            'Fevereiro',
-            'Março',
-            'Abril',
-            'Maio'
-        ],
+        labels: [],
 
         datasets: [{
             label: 'Quantidade de Posts',
 
-            data: [10, 20, 5, 16, 25],
+            data: [],
 
             backgroundColor: [
                 '#5E3527',
@@ -141,18 +135,12 @@ new Chart(grfEngajamento, {
     type: 'line',
 
     data: {
-        labels: [
-            'Janeiro',
-            'Fevereiro',
-            'Março',
-            'Abril',
-            'Maio'
-        ],
+        labels: [],
 
         datasets: [{
             label: 'Curtidas Mensais',
 
-            data: [10, 20, 5, 16, 25],
+            data: [],
 
             borderColor: '#5E3527',
 

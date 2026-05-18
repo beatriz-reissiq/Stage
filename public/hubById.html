@@ -79,60 +79,9 @@
 
 </body>
 </html>
-<script src="./js/hub.js"></script>
-<script src="./js/hubPerfil.js"></script>
+<script src="./js/hubById.js"></script>
+
 <script>
-    sessionStorage.ID_USUARIO = data.id;
-    window.onload = function () {
-    document.getElementById('botaoAdicionar').style.display = 'block';
-};
-
-   function exibir() {
-    document.getElementById('botaoAdicionar').style.display = 'none';
-    document.getElementById('areaPostagem').style.display = 'flex';
-}
-
-    function publicar() {
-       document.getElementById('mensagem_post').innerHTML = "Post publicado com sucesso!";
-
-       setTimeout(function() {
-        document.getElementById('mensagem_post').innerHTML = "";
-        }, 1500);
-
-    document.getElementById('areaPostagem').style.display = 'none';
-    document.getElementById('botaoAdicionar').style.display = 'block';
-
-    var titulo = inputTitulo.value;
-    var descricao = inputDescricao.value;
-    var idUsuario = sessionStorage.ID_USUARIO;
-
-     fetch("/postagens/publicar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-            tituloServer: titulo,
-            descricaoServer: descricao,
-            idUsuarioServer: idUsuario
-        })
-    })
-
-    .then(function (resposta) {
-        console.log("Post publicado.");
-        listarPosts();
-    })
-
-    .catch(function (erro) {
-        console.log("Erro ao publicar:", erro);
-    });
-
-
-}
-
-    
-
     function pesquisar() {
     
     let input = ipt_pesquisar.value.toLowerCase();
