@@ -38,6 +38,24 @@
     </header>
 
 <main>
+    <div id="popupPerfil" class="popupPerfil">
+        <div class="cardPopup">
+            <h2>Complete seu perfil</h2>
+            <p>
+                Antes de publicar no Stage Hub,
+                complete algumas informações sobre você.
+            </p>
+
+            <select id="select_genero">
+                <option value="">Selecione seu gênero</option>
+                <option value="Homem">Homem</option>
+                <option value="Mulher">Mulher</option>
+            </select>
+            <input type="number" id="input_idade" placeholder="Sua idade">
+            <button onclick="salvarPerfil()">Salvar Informações</button>
+        </div>
+    </div>
+
     <div class="container-adicionar" id="areaPostagem" style="display: none;"> 
         <div class="titulo"> ـــﮩ٨ـ Descreva abaixo a sua experiência musical ــ</div>
         <div class="container-texto">
@@ -62,6 +80,7 @@
 </body>
 </html>
 <script src="./js/hub.js"></script>
+<script src="./js/hubPerfil.js"></script>
 <script>
     sessionStorage.ID_USUARIO = data.id;
     window.onload = function () {

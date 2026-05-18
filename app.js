@@ -16,8 +16,10 @@ var HOST_APP = process.env.APP_HOST;
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var postagemRouter = require("./src/routes/postagens");
+var dashboardRouter = require("./src/routes/dashboard");
 
 var app = express();
+app.use("/dashboard", dashboardRouter);
 app.use("/postagens", postagemRouter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

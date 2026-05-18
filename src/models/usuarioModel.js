@@ -22,7 +22,21 @@ function cadastrar(nome, email, senha, vocacao) {
     return database.executar(instrucaoSql);
 }
 
+function completarPerfil(genero, idade, vocacao, idUsuario){
+
+    var instrucaoSql = `
+        update usuario
+        set
+        genero = '${genero}',
+        idade = '${idade}'
+        where id = ${idUsuario};
+    `;
+    
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    completarPerfil
 };

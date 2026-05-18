@@ -54,7 +54,31 @@ function cadastrar(req, res) {
         });
 }
 
+function completarPerfil(req, res){
+
+    var genero = req.body.generoServer;
+    var idade = req.body.idadeServer;
+    var idUsuario = req.body.idUsuarioServer;
+
+    usuarioModel.completarPerfil(
+        genero,
+        idade,
+        vocacao,
+        idUsuario
+    )
+
+    .then(function(resultado){
+        res.json(resultado);
+    })
+
+    .catch(function(erro){
+        console.log(erro);
+        res.status(500).json(erro);
+    });
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    completarPerfil
 };
