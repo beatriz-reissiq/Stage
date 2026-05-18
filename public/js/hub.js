@@ -1,6 +1,5 @@
  window.onload = function () {
     if (sessionStorage.ID_USUARIO) {
-        document.getElementById("btnParticipe").style.display = "none";
         } else {
             alert('Você precisa estar logado!')
             window.location.href = "login.html"
@@ -32,7 +31,7 @@ function listarPosts() {
                                 <small><b>${posts[i].nome}</b></small>
                             </div>
                             <div class="subtitulo">
-                                <small>${posts[i].vocacao}</small>
+                                <small>Talento: ${posts[i].vocacao}</small>
                             </div>
                             
                             <div class="comentario">

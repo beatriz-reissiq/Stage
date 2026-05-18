@@ -41,38 +41,41 @@
         </div>
         <input type="text" id="ipt_pesquisar" placeholder="🔍︎" oninput="pesquisar()">
         <div class="forms">
-            
         </div>
     </nav>
     </header>
-
     <main>
       <div class="container-feed">
         <div id="feedPosts"></div>
-    </div>
-      <div class="div_mensagem"></div>
+      </div>
+      <div id="div_mensagem" class="mensagem" style="display: none;">Nenhum resultado encontrado :❨</div>
     </main>
-
+    
 </body>
 </html>
 <script src="./js/hub.js"></script>
-<script src="./js/hubPerfil.js"></script>
 
 <script>
  function pesquisar() {
 
     let input = ipt_pesquisar.value.toLowerCase();
     let posts = document.getElementsByClassName("cardPost");
+    let encontrou = false;
 
     for (let i = 0; i < posts.length; i++) {
-
         let conteudo = posts[i].innerHTML.toLowerCase();
         if (conteudo.includes(input)) {
             posts[i].style.display = "block";
+            encontrou = true;
         } else {
             posts[i].style.display = "none";
-            div_mensagem.innerHTML = "Nenhum resultado encontrado :❨"
         }
+    } 
+    let mensagemNothing = document.getElementById("div_mensagem");
+    if (encontrou) {
+        document.getElementById("mensagemNothing").style.display = "none";
+    } else {
+        document.getElementById("mensagemNothing").style.display = "block";
     }
 }
 </script>

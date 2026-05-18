@@ -1,3 +1,4 @@
+var dashboardModel = require("../models/dashboardModel");
 function graficoGenero(req, res) {
 
     dashboardModel.graficoGenero()
