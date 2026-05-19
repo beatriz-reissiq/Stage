@@ -1,34 +1,23 @@
 var postagemModel = require("../models/postagemModel");
 
 function publicar(req, res) {
-
-    console.log("ENTROU NO PUBLICAR");
-
-   //var titulo = inputTitulo.value;
-   //var descricao = inputDescricao.value;
-   //var id = sessionStorage.ID_USUARIO;
-
     var titulo = req.body.tituloServer;
     var descricao = req.body.descricaoServer;
     var fkUsuario = req.body.fkUsuarioServer;
-
     postagemModel.publicar(titulo, descricao, fkUsuario)
-
         .then(function(resultado) {
-
             res.json(resultado);
         })
 
         .catch(function(erro) {
-
             console.log(erro);
-
             res.status(500).json(erro);
         });
 }
 
 function listar(req, res) {
-    postagemModel.listar()
+    var idUsuario = req.params.idUsuario;
+    postagemModel.listar(idUsuario)
         .then(function (resultado) {
             res.json(resultado);
         })
@@ -39,39 +28,46 @@ function listar(req, res) {
         });
 }
 
-function emAlta(req, res) {
-    postagemModel.emAlta()
-        .then(function (resultado) {
+function curtir(req, res){
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPostagem = req.body.fkPostagemServer;
+    postagemModel.curtir(fkUsuario, fkPostagem)
+        .then(function(resultado){
             res.json(resultado);
         })
-
-        .catch(function (erro) {
+        .catch(function(erro){
             console.log(erro);
             res.status(500).json(erro);
         });
 }
 
-function curtir(req, res) {
+function verificarCurtida(req, res){
 
-    var idPost = req.body.idPost;
-    postagemModel.curtir(idPost)
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPostagem = req.body.fkPostagemServer;
+    postagemModel.verificarCurtida(fkUsuario, fkPostagem)
+        .then(function(resultado){
+            if(resultado.length > 0){
+                res.json({
+                    curtiu: true
+                });
 
-        .then(function (resultado) {
-            res.json(resultado);
+            } else {
+                res.json({
+                    curtiu: false
+                });
+            }
         })
 
-        .catch(function (erro) {
+        .catch(function(erro){
             console.log(erro);
             res.status(500).json(erro);
         });
 }
-
-
 
 function listarMeusPosts(req, res) {
     var fkUsuario = req.params.fkUsuario;
     postagemModel.listarMeusPosts(fkUsuario)
-
         .then(function (resultado) {
             res.json(resultado);
         })
@@ -84,8 +80,8 @@ function listarMeusPosts(req, res) {
 
 module.exports = {
     listar,
-    emAlta,
     curtir,
+    verificarCurtida,
     publicar,
     listarMeusPosts
 }

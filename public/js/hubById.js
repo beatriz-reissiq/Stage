@@ -61,23 +61,23 @@ function botao() {
 };
 
 function exibir() {
-    document.getElementById('botaoAdicionar').style.display = 'none';
     document.getElementById('areaPostagem').style.display = 'flex';
+    document.getElementById('containerPostagem').style.display = 'flex';
 }
 
-     function publicar() {
-       document.getElementById('mensagem_post').innerHTML = "Post publicado com sucesso!";
-
-       setTimeout(function() {
-        document.getElementById('mensagem_post').innerHTML = "";
-        }, 1500);
-
-    document.getElementById('areaPostagem').style.display = 'none';
-    document.getElementById('botaoAdicionar').style.display = 'block';
-
+    function publicar() {
     var titulo = inputTitulo.value;
     var descricao = inputDescricao.value;
     var id = sessionStorage.ID_USUARIO;
+
+    if (
+    titulo == "" ||
+    descricao == ""
+    ) {
+    
+        alert("Preencha todos os campos!")
+        return false;
+  }
 
      fetch("/postagens/publicar", {
         method: "POST",
@@ -94,12 +94,71 @@ function exibir() {
 
     .then(function (resposta) {
         console.log("Post publicado.");
+        setTimeout(function() {
         window.location.reload();
+        }, 1500);
+        
+        document.getElementById('mensagem_post').innerHTML = "Post publicado com sucesso!";
+       setTimeout(function() {
+        document.getElementById('mensagem_post').innerHTML = "";
+        }, 1500);
+
+       document.getElementById('areaPostagem').style.display = 'none';
+       document.getElementById('containerPostagem').style.display = 'none';
+       document.getElementById('botaoAdicionar').style.display = 'block';
+
         listarPosts();
     })
 
     .catch(function (erro) {
         console.log("Erro ao publicar:", erro);
     });
+    
+    return false;
 }
+
+function listarMeusPosts() {
+
+    fetch(`/postagens/listarMeusPosts/${sessionStorage.ID_USUARIO}`)
+        .then(function (resposta) {
+            return resposta.json();
+        })
+
+        .then(function (posts) {
+            const feed = document.getElementById('feedPosts');
+
+            feed.innerHTML = "";
+            for (let i = 0; i < posts.length; i++) {
+
+               feed.innerHTML += `
+                <div class="container-conteudo">
+                    <div class="conteudo-post">
+                        <div class="cardPost">
+
+                            <div class="titulo">
+                                 ${posts[i].titulo}
+                           </div>
+
+                           <div class="comentario">
+                               ${posts[i].descricao}
+                           </div>
+
+                           <div>
+                               ♡ ${posts[i].curtidas}
+                           </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                `;
+            }
+        })
+        .catch(function (erro) {
+            console.log("Erro ao listar meus posts:", erro);
+        });
+}
+
+listarMeusPosts();
 

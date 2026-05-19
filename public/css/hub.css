@@ -149,14 +149,14 @@ main {
 
     /* define a altura do elemento usando cálculo */
     /* 100vh = 100% da altura da tela */
-    height: calc(100vh - 80px);
+    height: calc(110vh - 80px);
 
     overflow-y: auto; /* adiciona rolagem vertical apenas se necessário */
     padding: 20px;
 }
 
 .container-feed {
-    margin-top: 5vh;
+    margin-top: -50vh;
     border-radius: 10px;
     padding: 15px;
     width: 70%;
@@ -175,7 +175,7 @@ main {
     border: 1px solid var(--secundaria);
     border-radius: 10px;
     padding: 5px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     align-items: start;
 }
 

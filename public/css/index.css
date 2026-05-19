@@ -43,30 +43,39 @@ body {
 a {
     text-decoration: none;
 }
-
 /* NAVBAR ---------------------------------------- */
 header {
     nav {
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.418);
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.226);
         display: flex;
-        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
         min-height: 80px;
         margin: 0px;
-        gap: 20px;
+        gap: 45vw;
         z-index: 10;
        
-        .logo {
+        .left {
+            width: 25vw;
             display: flex;
-            height: 50px;
-            margin-left: 70px;
-            margin-bottom: 10px;
+            align-items: center;
+            flex-direction: row;
+            height: 8vh;
+            margin-right: 65vw;
+            position: fixed;
+        }
+
+        .logo img {
+            height: auto;
+            width: 5.5vw;
         }
 
         .link {
-            margin-left: 10px; 
+            margin-left: 1vw; 
+
             a {
                 font-size: 18px;
                 color:white;
@@ -76,13 +85,11 @@ header {
             }
         }
 
-        .espaco {
-            width: 50%;
-        }
-
-        .main-forms {
+        .container-botoes {
             display: flex;
             flex-direction: row;
+            margin-left: 75vw;
+            position: fixed;
         }
         .forms {
             margin-left: auto;
@@ -101,7 +108,7 @@ header {
 
         .exit {
             width: 5vw;
-            height: 3.5vh;
+            height: 3.8vh;
             font-size: 15px;
             text-decoration: none;
             border: 2px solid var(--terciaria);
@@ -269,7 +276,7 @@ main {
 
             .card  {
                 width: 18vw;
-                height: 38vh;
+                height: 36vh;
                 margin-top: 40px;
                 box-shadow: -34px 23px 0px 5px var(--primaria);
                 justify-content: column;
@@ -327,7 +334,7 @@ main {
         }
 /* ---------------------------------------- */
 
-       
+      
 
 
             

@@ -31,13 +31,15 @@
            <a href="./index.html"><img src="./assets/img/logo.png" alt=""></a>
         </div>
         <input type="text" id="ipt_pesquisar" placeholder="🔍︎ Buscar nos meus posts" oninput="pesquisar()">
-        <div class="forms">
-            
+        <div class="forms"> 
+            <button onclick="exibir()" class="btnAdicionar" id="botaoAdicionar">Adicionar Post ↩ </button>
         </div>
     </nav>
     </header>
+    
 
 <main>
+    
     <div id="popupPerfil" class="popupPerfil">
         <div class="cardPopup">
             <h2>Complete seu perfil</h2>
@@ -56,6 +58,7 @@
         </div>
     </div>
 
+    <div class="container-main" id="containerPostagem" style="display: none;">
     <div class="container-adicionar" id="areaPostagem" style="display: none;"> 
         <div class="titulo"> ـــﮩ٨ـ Descreva abaixo a sua experiência musical ــ</div>
         <div class="container-texto">
@@ -65,12 +68,13 @@
         </div>
         <button onclick="publicar()" class="btnPublicar" id="botaoPublicar">Publicar</button>
     </div>
-
+    </div>
     <div id="div_mensagem" class="mensagem"></div>
     
-
-    <button onclick="exibir()" class="btnAdicionar" id="botaoAdicionar">Adicionar Post ↩ </button>
+    
+    
     <div id="mensagem_post" class="mensagem"></div>
+
     <div class="container-feed">
         <div id="feedPosts"></div>
     </div>

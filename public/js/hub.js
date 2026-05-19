@@ -9,7 +9,7 @@
 
 function listarPosts() {
 
-    fetch("/postagens/listar")
+    fetch(`/postagens/listar/${sessionStorage.ID_USUARIO}`)
         .then(function (resposta) {
             return resposta.json();
         })
@@ -20,7 +20,7 @@ function listarPosts() {
             feed.innerHTML = "";
             for (let i = 0; i < posts.length; i++) {
 
-                feed.innerHTML += `
+               feed.innerHTML += `
                 <div class="container-conteudo">
                     <div class="conteudo-post">
                         <div class="cardPost">
@@ -33,22 +33,25 @@ function listarPosts() {
                             <div class="subtitulo">
                                 <small>Talento: ${posts[i].vocacao}</small>
                             </div>
-                            
                             <div class="comentario">
                                 ${posts[i].descricao}
                             </div>
                             <button class="botaoCurtida"
                                 onclick="curtir(${posts[i].idPostagem}, ${i})">
-                                <span id="coracao${i}">♡</span>
-                                <span id="curtidas${i}">0</span>
+                                <span id="coracao${i}">
+                                    ${posts[i].curtiu ? "❤️" : "♡"}
+                                </span>
+                                <span id="curtidas${i}">
+                                    ${posts[i].curtidas}
+                                </span>
                             </button>
                         </div>
                     </div>
                 </div>
+                <br><br>
                 `;
             }
         })
-
         .catch(function (erro) {
             console.log("Erro ao listar posts:", erro);
         });
@@ -59,10 +62,27 @@ function curtir(idPost, indice) {
     const coracao = document.getElementById(`coracao${indice}`);
     const curtidas = document.getElementById(`curtidas${indice}`);
 
-    let numeroCurtidas = Number(curtidas.innerHTML);
-    if (coracao.innerHTML == "♡") {
-        coracao.innerHTML = "❤️";
-        numeroCurtidas++;
+    fetch("/postagens/verificarCurtida", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            fkUsuarioServer: sessionStorage.ID_USUARIO,
+            fkPostagemServer: idPost
+        })
+    })
+
+    .then(function(resposta){
+        return resposta.json();
+    })
+
+    .then(function(resultado){
+        if(resultado.curtiu){
+            console.log("Você já curtiu esse post!");
+            return;
+        }
 
         fetch("/postagens/curtir", {
             method: "POST",
@@ -71,58 +91,18 @@ function curtir(idPost, indice) {
             },
 
             body: JSON.stringify({
-                idPost: idPost
+                fkUsuarioServer: sessionStorage.ID_USUARIO,
+                fkPostagemServer: idPost
             })
-        });
-
-    } else {
-
-        coracao.innerHTML = "♡";
-        numeroCurtidas--;
-    }
-
-    curtidas.innerHTML = numeroCurtidas;
-}
-
-function buscarEmAlta() {
-
-    fetch("/postagens/emAlta")
-        .then(function (resposta) {
-            return resposta.json();
         })
 
-        .then(function (posts) {
-            const feed = document.getElementById('feedPosts');
-
-            feed.innerHTML = "";
-            for (let i = 0; i < posts.length; i++) {
-
-                feed.innerHTML += `
-                    <div class="container-conteudo">
-                        <div class="conteudo-post">
-                            <div class="cardPost">
-                                <div class="titulo">
-                                    ${posts[i].titulo}
-                                </div>
-                                <div class="subtitulo">
-                                    <small>${posts[i].vocacao}</small>
-                                </div>
-                                <div class="comentario">
-                                    ${posts[i].descricao}
-                                </div>
-                                <button class="botaoCurtida">
-                                    ❤️ ${posts[i].curtidas}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-        })
-
-        .catch(function (erro) {
-            console.log("Erro ao buscar posts:", erro);
+        .then(function(){
+            coracao.innerHTML = "❤️";
+            let numeroCurtidas = Number(curtidas.innerHTML);
+            numeroCurtidas++;
+            curtidas.innerHTML = numeroCurtidas;
         });
+    });
 }
 
 listarPosts();
