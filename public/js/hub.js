@@ -33,9 +33,11 @@ function listarPosts() {
                             <div class="subtitulo">
                                 <small>Talento: ${posts[i].vocacao}</small>
                             </div>
+                            <br>
                             <div class="comentario">
                                 ${posts[i].descricao}
                             </div>
+                            <br>
                             <button class="botaoCurtida"
                                 onclick="curtir(${posts[i].idPostagem}, ${i})">
                                 <span id="coracao${i}">
@@ -45,6 +47,10 @@ function listarPosts() {
                                     ${posts[i].curtidas}
                                 </span>
                             </button>
+                            
+                            <span>
+                                ${posts[i].dataPostagem}
+                            </span>
                         </div>
                     </div>
                 </div>

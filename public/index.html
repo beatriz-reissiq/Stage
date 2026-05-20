@@ -1,147 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stage - Home</title>
-    <link rel="stylesheet" href="./css/index.css">
- 
-</head>
-<body>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
     <header>
-    <nav>
-        <div class="left">
-            <div class="logo">
-                <img src="./assets/img/logo.png" alt=""> 
-            </div>
+      <nav>
+        <div class="container-logo-link">
+          <div class="logo">
+            <img src="./assets/img/logo.png" alt="" />
+          </div>
+
+          <div>
             <div class="link">
-            <a class="link" href="index.html">Home</a>
-            <a class="link" href="hub.html">Hub</a>
-            <a class="link" href="guia.html">Guia</a>
+              <a href="index.html">Home</a>
+              <a href="hub.html">Hub</a>
+              <a href="guia.html">Guia</a>
             </div>
+          </div>
         </div>
-     
+
         <div class="container-botoes">
-            <div class="forms">
-                <a id="btnCadastro" class="acess" href="cadastro.html" style="display: inline-block;">Cadastre-se</a>
-            </div>
-            <div class="forms">
-                <a id="btnLogin" class="acess" href="login.html" style="display: inline-block;">Entrar</a>
-            </div>
-            <div class="forms" id="formsDash" style="display: none;">
-                <a id="btnDashboard" class="acess" href="dashboard.html" style="display: none;">Dashboard</a>
-            </div>
-            <div class="forms">
-                <button onclick="sair()" class="exit" id="btnSair" style="display: none;">Sair</button>
-            </div>
+          <a href="cadastro.html"
+            ><button id="btnCadastro" class="acess" style="display: block">
+              Cadastre-se
+            </button></a
+          >
+          <a href="login.html"
+            ><button id="btnLogin" class="acess" style="display: block">
+              Entrar
+            </button></a
+          >
+          <a href="./dashboard.html"
+            ><button id="btnDashboard" class="acess" style="display: none">
+              Dashboard
+            </button></a
+          >
+          <button
+            onclick="sair()"
+            class="exit"
+            id="btnSair"
+            style="display: none"
+          >
+            Sair
+          </button>
         </div>
+      </nav>
 
-    </nav>
-    
-    <div class="container-banner">
-    <img src="./assets/img/background_home.png" alt="Microfone">
-    <span class="fraseEfeito">Descubra trajetórias, compartilhe momentos <br> 
-        e encontre inspiração no nosso espaço.</span>
+      <div class="container-banner">
+        <img src="./assets/img/background_home.png" alt="Microfone" />
+        <span class="fraseEfeito"
+          >Descubra trajetórias, compartilhe momentos <br />
+          e encontre inspiração no nosso espaço.</span
+        >
+        <a href="./about.html"><button class="start">Sobre</button></a>
+        <a href="./hub.html"> <button class="coment">Participar</button></a>
+      </div>
+    </header>
 
-        <button onclick="window.location.href='About.html'" class="start">Sobre</button>
-        <button onclick="window.location.href='hub.html'" class="coment">Participar</button>
-    </div>
-  </header>
-
-  <main>
-    
-    <div class="container-texto">
-        <span class="estrela1"><img src="./assets/img/estrelas.png" alt=""></span>
-        <span class="fraseEfeitoMain">
-            Um passo de coragem
-        </span>
+    <main>
+      <div class="container-texto">
+        <img class="estrela1" src="./assets/img/estrelas.png" alt="" />
+        <span class="fraseEfeitoMain"> Um passo de coragem </span>
         <span class="fraseEfeitoColorida">
-            pode revelar um grande talento!
+          pode revelar um grande talento!
         </span>
-        <span class="estrela2"><img src="./assets/img/estrelas.png" alt=""></span>
-    </div>
+        <img class="estrela2" src="./assets/img/estrelas.png" alt="" />
+      </div>
 
-    <div class="container-sobre">
-       <span class="violao"> <img src="./assets/img/violao_about.png" alt=""> </span>
+      <div class="container-sobre">
+        <img class="violao" src="./assets/img/violao_about.png" alt="" />
 
-       <div class="tituloSobre">
-            <span>O que é o Stage?</span>
-        </div>
+        <div class="tituloSobre">O que é o Stage?</div>
+
         <div class="sobre">
-       <span class="textoSobre"> <p>O Stage é um espaço para acolher aqueles que já pensaram em cantar, 
-        tocar ou se expressar artísticamente e acabaram desistindo por conta de inseguranças. 
-        <br><br> Através do nosso hub, você verá que esse medo é mais comum do que parece.
-        Em conjunto com a comunidade, podemos aprender que tudo começa com um primeiro passo, 
-        mesmo que pequeno.</p></span> 
-       </div> 
-    </div>
+          O Stage é um espaço para acolher aqueles que já pensaram em cantar,
+          tocar ou se expressar artísticamente e acabaram desistindo por conta
+          de inseguranças.
+          <br /><br />Através do nosso hub, você verá que esse medo é mais comum
+          do que parece. Em conjunto com a comunidade, podemos aprender que tudo
+          começa com um primeiro passo, mesmo que pequeno.
+        </div>
+      </div>
 
-    <div class="container-servicos">
-        <div class="tituloServicos">
-            <span>Serviços</span>
-        </div>
-        
-        <div class="card">
-            <img src="./assets/img/logo_blog.png" alt="">
-                 <a href="./hub.html"><div class="subtitulo">Hub</div></a>
-                <div class="texto">
-                Contribua com a comunidade no nosso hub 
-                e inspire-se compartilhando experiências!
-                </div>
-        </div>
+      <div class="container-servicos">
+        <div class="tituloServicos">Serviços</div>
 
         <div class="card">
-            <img src="./assets/img/logo_dicas.png" alt="">
-             <a href="./guia.html"><div class="subtitulo">Guia</div></a>
-             <div class="texto">
-             Acesse a nossa página com indicações de sites e 
-             canais para aprimorar suas habilidades na música!
-             </div>
-        </div>  
-        
-        <div class="card">
-            <img src="./assets/img/foto-perfil.png" alt="">
-                <a href="./about.html"><div class="subtitulo">Sobre Mim</div></a>
-                <div class="texto">
-                Quer saber mais sobre o projeto e a iniciativa Stage?
-                Conheça um pouco sobre mim aqui!
-                </div>
+          <img src="./assets/img/logo_blog.png" alt="" />
+          <a href="./hub.html"><div class="subtitulo">Hub</div></a>
+          <div class="texto">
+            Contribua com a comunidade no nosso hub e inspire-se compartilhando
+            experiências!
+          </div>
         </div>
 
-    </div>
-  </main>
+        <div class="card">
+          <img src="./assets/img/logo_dicas.png" alt="" />
+          <a href="./guia.html"><div class="subtitulo">Guia</div></a>
+          <div class="texto">
+            Acesse a nossa página com indicações de sites e canais para
+            aprimorar suas habilidades na música!
+          </div>
+        </div>
 
-  <footer>
-   <div class="copy">Copyright © 2026 STAGE</div>
-  </footer>
+        <div class="card">
+          <img src="./assets/img/foto-perfil.png" alt="" />
+          <a href="./about.html"><div class="subtitulo">Sobre Mim</div></a>
+          <div class="texto">
+            Quer saber mais sobre o projeto e a iniciativa Stage? Conheça um
+            pouco sobre mim aqui!
+          </div>
+        </div>
+      </div>
+    </main>
 
-</body>
+    <footer>
+      <div class="copy">Copyright © 2026 STAGE</div>
+    </footer>
+  </body>
 </html>
 
 <script>
-   window.onload = function () {
+  window.onload = function () {
     verificarAdm();
     alterarBotao();
-}
+  };
 
-function verificarAdm() {
+  function verificarAdm() {
     let adm = sessionStorage.ADM;
     if (adm == 1) {
-        document.getElementById("btnDashboard").style.display = "block";
-        document.getElementById("formsDash").style.display = "block";
+      document.getElementById("btnDashboard").style.display = "block";
     }
-}
+  }
 
-function alterarBotao() {
+  function alterarBotao() {
     if (sessionStorage.ID_USUARIO) {
-        document.getElementById("btnCadastro").style.display = "none";
-        document.getElementById("btnLogin").style.display = "none";
-        document.getElementById("btnSair").style.display = "block";
+      document.getElementById("btnCadastro").style.display = "none";
+      document.getElementById("btnLogin").style.display = "none";
+      document.getElementById("btnSair").style.display = "block";
     }
-}
+  }
 
-function sair() {
+  function sair() {
     sessionStorage.clear();
     window.location = "index.html";
-}
+  }
 </script>

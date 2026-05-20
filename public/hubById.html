@@ -31,9 +31,6 @@
            <a href="./index.html"><img src="./assets/img/logo.png" alt=""></a>
         </div>
         <input type="text" id="ipt_pesquisar" placeholder="🔍︎ Buscar nos meus posts" oninput="pesquisar()">
-        <div class="forms"> 
-            <button onclick="exibir()" class="btnAdicionar" id="botaoAdicionar">Adicionar Post ↩ </button>
-        </div>
     </nav>
     </header>
     
@@ -71,12 +68,16 @@
     </div>
     <div id="div_mensagem" class="mensagem"></div>
     
-    
-    
-    <div id="mensagem_post" class="mensagem"></div>
+
+    <div class="forms"> 
+            <button onclick="exibir()" class="btnAdicionar" id="botaoAdicionar">Adicionar Post ↩ </button>
+    </div>
+        <div id="mensagem_post" class="mensagem"></div>
 
     <div class="container-feed">
-        <div id="feedPosts"></div>
+        <div id="feedPosts">
+
+        </div>
     </div>
 </main>
     

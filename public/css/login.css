@@ -1,45 +1,45 @@
 /* Declarando Cores ---------------------------------------- */
-    :root {
-    --primaria: #5E3527;
-    --secundaria: #B39289;
-    --terciaria: #A1786E;
+:root {
+    --primaria: #5e3527;
+    --secundaria: #b39289;
+    --terciaria: #a1786e;
 }
 
 /* Declarando Fontes Personalizadas ---------------------------------------- */
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf');
-  font-weight: 100 900;
-  font-style: normal;
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf");
+    font-weight: 100 900;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'Caligrafia';
-    src: url('../assets/fonts/AlexBrush-Regular.ttf');
+    font-family: "Caligrafia";
+    src: url("../assets/fonts/AlexBrush-Regular.ttf");
 }
 
 @font-face {
-    font-family: 'Heart';
-    src: url('../assets/fonts/Heart Bubble.otf')
+    font-family: "Heart";
+    src: url("../assets/fonts/Heart Bubble.otf");
 }
+
 /* ---------------------------------------- */
-*{
-    margin: 0px; 
-    font-family: 'Montserrat', sans-serif;
-    padding: 0px
+* {
+    margin: 0px;
+    font-family: "Montserrat", sans-serif;
+    padding: 0px;
 }
 
 body {
     background-color: white;
-    }
+}
 
-    button {
-        border: none;
-        background: none;
-        outline: none;
-        cursor: pointer;
-    }
-
+button {
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
 
 /* Container-Marrom ---------------------------------------- */
 main {
@@ -47,90 +47,88 @@ main {
     height: 100vh;
     display: flex;
     align-items: center;
-    
 }
-    .container-ilustracao {
-        display: flex;
-        flex-direction: column;
-        justify-content: center ;
-        width: 40%;
-        height: 100%;
-        background-color: var(--secundaria);
-    }
 
-    .container-ilustracao img{
-        width: 80%;
-        margin-bottom: -13vh;
-        margin-left: 4vw;
-    }
+.container-ilustracao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 40%;
+    min-height: 100%;
+    background-color: var(--secundaria);
+}
 
-    .subtexto {
-        color: white;
-        margin-left: 70px;
-        margin-top: 40px;
-        width: 70%;
-    }
+.ilustracao {
+    width: 112%;
+    margin-bottom: -17vh;
+}
 
-    .fraseEfeito {
-        margin-left: 70px;
-        margin-bottom: -30px;
-        color: var(--primaria);
-        font-size: 40px;
-        font-family: 'Heart';
-    }
+.subtexto {
+    color: white;
+    margin-left: 70px;
+    margin-top: 40px;
+    width: 70%;
+    font-size: 1.2rem;
+}
 
-    .container-forms {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 60%;
-        height: 100%;
-    }
+.fraseEfeito {
+    margin-left: 70px;
+    margin-bottom: -30px;
+    color: var(--primaria);
+    font-size: 3rem;
+    font-family: "Heart";
+}
 
-    .tituloForms {
-        font-size: 40px;
-        font-weight: bold;
-         margin-bottom: 30px;
-    }
+.container-forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+}
 
-    input {
-        width: 23rem;
-        height: 25px;
-        border: none;
-        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.795);
-        border-radius: 5px;
-        padding: 5px;
-        outline: none;
-    }
+.tituloForms {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 3vh;
+}
 
-    .container-forms button {
-        width: 80px;
-        height: 30px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        background-color: var(--secundaria);
-        color: white;
-    }
+input {
+    width: 20vw;
+    height: 3vh;
+    border: none;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.763);
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    font-size: 1rem;
+}
 
-    .container-forms a {
-        color: var(--primaria);
-    }
+.container-forms button {
+    width: 5vw;
+    height: 3.5vh;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: var(--secundaria);
+    color: white;
+}
 
-    .container-forms small {
-        margin-top: 1rem;
-        color: var(--primaria);
-    }
+.container-forms a {
+    color: var(--primaria);
+}
 
-    .voltar {
-        color: white;
-        margin-left: 8%;
-        margin-bottom: 3%;
-        width: 20%;
-        height: auto;
-    }
+.container-forms small {
+    margin-top: 1.5vh;
+    color: var(--primaria);
+    font-size: 1rem;
+}
 
-    .voltar a {
-        text-decoration: none;
-        color: inherit;
-    }
+.voltar {
+    color: white;
+    margin-left: 1.5vw;
+    margin-bottom: 3%;
+    width: 20%;
+    height: auto;
+    font-weight: bold;
+}

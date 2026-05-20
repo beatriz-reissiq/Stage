@@ -94,13 +94,9 @@ function exibir() {
 
     .then(function (resposta) {
         console.log("Post publicado.");
+        document.getElementById('mensagem_post').innerHTML = "Post publicado com sucesso!";
         setTimeout(function() {
         window.location.reload();
-        }, 1500);
-        
-        document.getElementById('mensagem_post').innerHTML = "Post publicado com sucesso!";
-       setTimeout(function() {
-        document.getElementById('mensagem_post').innerHTML = "";
         }, 1500);
 
        document.getElementById('areaPostagem').style.display = 'none';
@@ -112,6 +108,7 @@ function exibir() {
 
     .catch(function (erro) {
         console.log("Erro ao publicar:", erro);
+        document.getElementById('mensagem_post_error').innerHTML = "Erro ao publicar o post!";
     });
     
     return false;
@@ -131,8 +128,8 @@ function listarMeusPosts() {
             for (let i = 0; i < posts.length; i++) {
 
                feed.innerHTML += `
-                <div class="container-conteudo">
-                    <div class="conteudo-post">
+                
+                    
                         <div class="cardPost">
 
                             <div class="titulo">
@@ -148,8 +145,8 @@ function listarMeusPosts() {
                            </div>
 
                         </div>
-                    </div>
-                </div>
+                   
+              
 
                 <br>
                 `;

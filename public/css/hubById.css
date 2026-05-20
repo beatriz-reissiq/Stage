@@ -158,12 +158,13 @@ main {
     overflow-y: auto; /* adiciona rolagem vertical apenas se necessário */
     padding: 20px;
 }
-.mensagem{
-        color: gray;
-    }
+
 /* ---------------------------------------- */
 
 /* conteudo-post ---------------------------------------- */
+#feedPosts {
+    max-height: 20vh;
+}
 
 .container-main {
     background-color: rgba(0, 0, 0, 0.356);
@@ -246,15 +247,28 @@ main {
     height: 4vh;
     border-radius: 5px;
     color: white;
+   margin-bottom: 15vh;
 }
 
 #mensagem_post{
-    width: 100%;
+    position: absolute;
     text-align: center;
     font-size: 1rem;
     color: #2ecc70dc;
-    margin-top: 2vh; 
-    min-height: 24px; 
+    bottom: 70%;
+}
+
+#mensagem_post_error {
+    position: absolute;
+    text-align: center;
+    font-size: 1rem;
+    color: red;
+    bottom: 70%;
+}
+
+#div_mensagem {
+    position: absolute;
+    color: gray;
 }
 
 .popupPerfil {
@@ -314,6 +328,7 @@ main {
 .cardPost {
     border: 1px solid var(--terciaria);
     padding: 20px;
+    max-width: 40vw;
 }
 
 
