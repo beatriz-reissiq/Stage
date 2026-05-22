@@ -43,7 +43,7 @@
       <div class="container-feed">
         <div id="feedPosts"></div>
       </div>
-      <div id="div_mensagem" class="mensagem" style="display: none;">Nenhum resultado encontrado :❨</div>
+      <div id="mensagemNaoEncontrou" class="mensagem" style="display: none;">Nenhum resultado encontrado :❨</div>
     </main>
     
 </body>
@@ -66,11 +66,10 @@
             posts[i].style.display = "none";
         }
     } 
-    let mensagemNothing = document.getElementById("div_mensagem");
     if (encontrou) {
-        document.getElementById("mensagemNothing").style.display = "none";
+        document.getElementById("mensagemNaoEncontrou").style.display = "none";
     } else {
-        document.getElementById("mensagemNothing").style.display = "block";
+        document.getElementById("mensagemNaoEncontrou").style.display = "block";
     }
 }
 </script>

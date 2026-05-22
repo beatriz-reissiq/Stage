@@ -16,6 +16,7 @@ function listar(idUsuario) {
      postagem.titulo,
      postagem.descricao,
      postagem.curtidas,
+     postagem.dataPostagem,
      usuario.nome,
      usuario.vocacao,
      case
@@ -67,7 +68,8 @@ function listarMeusPosts(id) {
         `select
         titulo,
         descricao,
-        curtidas
+        curtidas,
+        dataPostagem
         from postagem
         where fkUsuario = ${id}
         order by idPostagem desc;`;

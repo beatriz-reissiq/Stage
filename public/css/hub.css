@@ -75,17 +75,6 @@ header {
             padding-left: 10px;
             outline: none;
         }
-
-        .acess {
-            font-size: 15px;
-            text-decoration: none;
-            padding: 8px 20px;
-            background-color: var(--primaria);
-            color: white;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-        }
     }
 
 
@@ -95,7 +84,7 @@ header {
         left: 0;
         background-color: white;
         display: flex;
-        width: 11vw;
+        width: 10vw;
         height: 100vh;
         gap: 10px;
         border-right: 1px solid #5e352767;
@@ -185,5 +174,10 @@ main {
 }
 
 .mensagem {
+    color: gray;
+}
+
+.dataPost {
+    margin-left: 55vw;
     color: gray;
 }

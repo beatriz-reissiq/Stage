@@ -8,21 +8,47 @@
 </head>
 <body>
     <header>
-    <nav>
-        <div class="logo">
-            <img src="./assets/img/logo.png" alt=""> 
+   <nav>
+        <div class="container-logo-link">
+          <div class="logo">
+            <img src="./assets/img/logo.png" alt="" />
+          </div>
+
+          <div>
+            <div class="link">
+              <a href="index.html">Home</a>
+              <a href="hub.html">Hub</a>
+              <a href="guia.html">Guia</a>
+            </div>
+          </div>
         </div>
-        
-        <div class="link">
-        <a class="link" href="index.html">Home</a>
-        <a class="link" href="Hub.html">Hub</a>
-        <a class="link" href="guia.html">Guia</a>
+
+        <div class="container-botoes">
+          <a href="cadastro.html"
+            ><button id="btnCadastro" class="acess" style="display: block">
+              Cadastre-se
+            </button></a
+          >
+          <a href="login.html"
+            ><button id="btnLogin" class="acess" style="display: block">
+              Entrar
+            </button></a
+          >
+          <a href="./dashboard.html"
+            ><button id="btnDashboard" class="acess" style="display: none">
+              Dashboard
+            </button></a
+          >
+          <button
+            onclick="sair()"
+            class="exit"
+            id="btnSair"
+            style="display: none"
+          >
+            Sair
+          </button>
         </div>
-        
-        <div class="forms">
-            <button><a class="acess" href="cadastro.html">Cadastre-se</a></button>
-        </div>
-    </nav>
+      </nav>
   </header>
 
   <main>
@@ -97,7 +123,7 @@
                 </button>
 
                 <button id="btnAfinacao">
-                    <img src="./assets/img/background_dicas_afinacao.png" alt="">Como Treinar Afinação
+                    <img src="./assets/img/backgrounds_dicas_afinacao.png" alt="">Como Treinar Afinação
                 </button>
 
                 <button id="btnVergonha">
@@ -146,6 +172,11 @@
                 <p> Por fim, compartilhe sua experiência com a <a href="./hub.html">comunidade</a> e inspire outras pessoas! </p>
             </div>
             </div>
+
+            <footer>
+            <div class="copy">Copyright © 2026 STAGE</div>
+            </footer>
+
  
     </div>    
   </main>

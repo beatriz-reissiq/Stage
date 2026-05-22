@@ -66,14 +66,15 @@
         <button onclick="publicar()" class="btnPublicar" id="botaoPublicar">Publicar</button>
     </div>
     </div>
-    <div id="div_mensagem" class="mensagem"></div>
     
-
+    
     <div class="forms"> 
-            <button onclick="exibir()" class="btnAdicionar" id="botaoAdicionar">Adicionar Post ↩ </button>
+        <button onclick="exibir()" class="btnAdicionar" id="botaoAdicionar">Adicionar Post ↩ </button>
     </div>
-        <div id="mensagem_post" class="mensagem"></div>
+    <div id="mensagem_post" class="mensagem"></div>
 
+    <div id="mensagemNaoEncontrou" class="mensagemNao" style="display: none;">Nenhum resultado encontrado :❨</div>
+    
     <div class="container-feed">
         <div id="feedPosts">
 
@@ -87,21 +88,25 @@
 <script src="./js/hubById.js"></script>
 
 <script>
-    function pesquisar() {
-    
+   function pesquisar() {
+
     let input = ipt_pesquisar.value.toLowerCase();
     let posts = document.getElementsByClassName("cardPost");
+    let encontrou = false;
 
     for (let i = 0; i < posts.length; i++) {
-
         let conteudo = posts[i].innerHTML.toLowerCase();
         if (conteudo.includes(input)) {
             posts[i].style.display = "block";
+            encontrou = true;
         } else {
             posts[i].style.display = "none";
-            div_mensagem.innerHTML = "Nenhum resultado encontrado :❨"
         }
+    } 
+    if (encontrou) {
+        document.getElementById("mensagemNaoEncontrou").style.display = "none";
+    } else {
+        document.getElementById("mensagemNaoEncontrou").style.display = "block";
     }
 }
-
 </script>

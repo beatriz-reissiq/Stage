@@ -52,24 +52,21 @@ header {
         z-index: 1000;
         background-color: white;
         display: flex;
-        flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        justify-content: center;
         width: 100%;
         min-height: 80px;
         margin: 0px;
-        gap: 25vw;
         border-bottom: 1px solid #5e352767;
 
         .logo a {
             display: flex;
             height: 50px;
             margin-bottom: 10px;
-            margin-right: 5vw;
+            margin-left: -12vw;
         }
 
-        input {
+        #nav, input {
             border: none;
             border: 1px solid var(--secundaria);
             border-radius: 10px;
@@ -77,18 +74,7 @@ header {
             height: 3vh;
             padding-left: 10px;
             outline: none;
-            margin-left: 7vw;
-        }
-
-        .acess {
-            font-size: 15px;
-            text-decoration: none;
-            padding: 8px 20px;
-            background-color: var(--primaria);
-            color: white;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
+            margin-right: 25vw;
         }
     }
 
@@ -250,7 +236,7 @@ main {
    margin-bottom: 15vh;
 }
 
-#mensagem_post{
+.mensagem_post{
     position: absolute;
     text-align: center;
     font-size: 1rem;
@@ -258,16 +244,11 @@ main {
     bottom: 70%;
 }
 
-#mensagem_post_error {
+.mensagemNao {
     position: absolute;
+    bottom: 40%;
     text-align: center;
     font-size: 1rem;
-    color: red;
-    bottom: 70%;
-}
-
-#div_mensagem {
-    position: absolute;
     color: gray;
 }
 
@@ -328,7 +309,12 @@ main {
 .cardPost {
     border: 1px solid var(--terciaria);
     padding: 20px;
-    max-width: 40vw;
+    min-width: 50vw;
+}
+
+.dataPost {
+    margin-left: 55vw;
+    color: gray;
 }
 
 

@@ -140,3 +140,24 @@ input {
     margin-top: 5vh;
     text-align: center;
 }
+
+.alerta {
+    position: fixed;
+    top: 2vh;
+    right: 2vw;
+    width: 15vw;
+    min-height: 4vh;
+    background-color: #fff8f0;
+    border-left: 7px solid #B39289;
+    border-radius: 35px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5E3527;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 10000;
+    display: none;
+}

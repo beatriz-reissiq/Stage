@@ -16,9 +16,11 @@ function listarPosts() {
 
         .then(function (posts) {
             const feed = document.getElementById('feedPosts');
-
+            
             feed.innerHTML = "";
             for (let i = 0; i < posts.length; i++) {
+
+                const dataBanco = (new Date(posts[i].dataPostagem)).toLocaleDateString('pt-BR');;
 
                feed.innerHTML += `
                 <div class="container-conteudo">
@@ -48,8 +50,8 @@ function listarPosts() {
                                 </span>
                             </button>
                             
-                            <span>
-                                ${posts[i].dataPostagem}
+                            <span class="dataPost">
+                               <small>${dataBanco}</small>
                             </span>
                         </div>
                     </div>

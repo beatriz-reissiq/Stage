@@ -28,7 +28,7 @@ function autenticar() {
         sessionStorage.ID_USUARIO = data.id;
         sessionStorage.NOME_USUARIO = data.nome;
 
-        alert("Olá, " + data.nome + "!");
+        // popLogin.innerHTML `Bem vindo(a) de volta, ${data.nome}!`
 
         window.location = "index.html";
     })

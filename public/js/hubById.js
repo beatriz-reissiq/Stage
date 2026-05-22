@@ -127,8 +127,9 @@ function listarMeusPosts() {
             feed.innerHTML = "";
             for (let i = 0; i < posts.length; i++) {
 
+                const dataBanco = (new Date(posts[i].dataPostagem)).toLocaleDateString('pt-BR');;
+
                feed.innerHTML += `
-                
                     
                         <div class="cardPost">
 
@@ -139,15 +140,16 @@ function listarMeusPosts() {
                            <div class="comentario">
                                ${posts[i].descricao}
                            </div>
-
+                            <br>
                            <div>
                                ♡ ${posts[i].curtidas}
-                           </div>
+                           
 
+                            <span class="dataPost">
+                               <small>${dataBanco}</small>
+                            </span>
                         </div>
-                   
-              
-
+                    </div>
                 <br>
                 `;
             }

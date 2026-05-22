@@ -39,39 +39,50 @@ body {
 /* NAVBAR ---------------------------------------- */
 header {
     nav {
+        position: fixed;
+        z-index: 10;
+        min-height: 9vh;
+        min-width: 100%;
         display: flex;
-        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 60vw;
         align-items: center;
-        background-color: white;
-        width: 100%;
-        min-height: 80px;
-        margin: 0px;
-        gap: 20px;
-        box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.175);
-       
-        .logo {
+        background-color: rgba(0, 0, 0, 0.226);
+
+        .container-logo-link {
             display: flex;
-            height: 50px;
-            margin-left: 70px;
-            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .logo img {
+            height: auto;
+            width: 5.8vw;
         }
 
         .link {
-            margin-left: 10px; 
-            a {
-                font-size: 18px;
-                color:var(--primaria);
-                text-decoration: none;
-                text-align: end;  
-                padding-right: 8px;
-            }
+            display: flex;
+            margin-left: 1vw;
+            gap: 10px
         }
 
-        .forms {
-            margin-left: auto;
-            margin-right: 60px;
-        } 
-           .acess {
+        .link a {
+            font-size: 18px;
+            padding-right: 8px;
+            text-align: end;
+            text-decoration: none;
+            color: white;
+        }
+
+        .container-botoes {
+            min-width: 10vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px
+        }
+
+        .acess {
             font-size: 15px;
             text-decoration: none;
             padding: 8px 20px;
@@ -80,9 +91,19 @@ header {
             border-radius: 8px;
             border: none;
             cursor: pointer;
-        
         }
+
+        .exit {
+            width: 5vw;
+            height: 3.8vh;
+            font-size: 15px;
+            text-decoration: none;
+            border: 2px solid var(--terciaria);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
         }
+    } 
 }
 /* ---------------------------------------- */
 
@@ -98,7 +119,7 @@ header {
     .container-header {
         display: flex;
         justify-content: center;
-        margin-top: 5vh;
+        margin-top: 15vh;
         width: 85%;
     }
 
@@ -106,6 +127,7 @@ header {
         width: 20vw;
         height: auto;
     }
+    
     .header {
         margin-top: 15vh;
         width: 70vw;
@@ -151,7 +173,7 @@ header {
         background-color: var(--secundaria);
         border-radius: 10px;
         padding: 1vw;
-        width: 36vw;
+        width: 32vw;
         margin-left: 4vw;
         margin-bottom: 10vh;
     }
@@ -179,9 +201,9 @@ header {
 
     .setinha {
         position: absolute;
-        left: 5%;
+        left: 8%;
         bottom: 2%;
-        width: 6vw;
+        width: 3vw;
     }
 
     .subtitulo {
@@ -193,7 +215,6 @@ header {
         font-weight: bolder;
         height: 5vh;
         width: 100%;
-       
     }
 
     .descricao {
@@ -245,8 +266,7 @@ header {
         height: auto;
         font-size: 1.5rem;
         font-weight: bold;
-        color: var(--primaria);
-        
+        color: var(--primaria);  
     }
 
     .container-guias img {
@@ -266,6 +286,7 @@ header {
     border-radius: 20px;
     font-size: 1.1rem;
     text-align: center;
+    color: white;
 }
 
 #conteudoAfinacao {
@@ -277,6 +298,7 @@ header {
     border-radius: 20px;
     font-size: 1.1rem;
     text-align: center;
+    color: white;
 }
 
 #conteudoVergonha {
@@ -290,21 +312,24 @@ header {
     border-radius: 20px;
     font-size: 1.1rem;
     text-align: center;
+    color: white;
 }
 /*---------------------------------------- */
 
     .container-desafio {
        background-color: var(--primaria);
        margin-top: 15vh;
+       padding-bottom: 5vh;
        width: 100%;
        height: 45vh;
        display: flex;
        flex-direction: column;
        align-items: center;
+       justify-content: center;
     }
 
     .container-desafio .titulo {
-        width: 90%;
+        width: 18%;
         color: white;
         margin-top: 5vh;
         margin-left: 3vw;
@@ -312,13 +337,13 @@ header {
     }
 
     .container-desafio .subtitulo {
-        width: 90%;
+        width: 65%;
         color: var(--secundaria);
         margin-left: 3vw;
         font-size: 1.3rem;
     }
     .sugestoes {
-        width: 70%;
+        width: 42%;
         font-size: 1.2rem;
         color: white;
         margin-top: 2vh;
@@ -328,3 +353,21 @@ header {
         color: var(--secundaria);
     }
 
+/* RODAPÉ ---------------------------------------- */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 10vh;
+    width: 100%;
+    box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.103);
+  
+}
+
+.copy {
+    margin-top: 12px;
+    color: var(--primaria);
+}
+
+/* ---------------------------------------- */
