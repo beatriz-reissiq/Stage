@@ -236,7 +236,7 @@ main {
    margin-bottom: 15vh;
 }
 
-.mensagem_post{
+.mensagem_post_class{
     position: absolute;
     text-align: center;
     font-size: 1rem;
@@ -309,11 +309,11 @@ main {
 .cardPost {
     border: 1px solid var(--terciaria);
     padding: 20px;
-    min-width: 50vw;
+    max-width: 70vw;
 }
 
 .dataPost {
-    margin-left: 55vw;
+    margin-left: 65vw;
     color: gray;
 }
 

@@ -1,12 +1,14 @@
 var database = require("../database/config");
 
 function publicar(titulo, descricao, idUsuario) {
-    var instrucaoSql = 
-        `insert into postagem
-        (titulo, descricao, fkUsuario) values ('${titulo}', '${descricao}', ${idUsuario});`;
+    var instrucaoSql = `
+    insert into postagem
+    (titulo, descricao, fkUsuario)
+    values
+    (?, ?, ?);
+`;
 
-    console.log(instrucaoSql);
-    return database.executar(instrucaoSql);
+return database.executar(instrucaoSql, [titulo, descricao, idUsuario]);
 }
 
 function listar(idUsuario) {
