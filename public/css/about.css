@@ -3,7 +3,7 @@
   --primaria: #5e3527;
   --secundaria: #b39289;
   --terciaria: #a1786e;
-  --quaternaria: ;
+  --quaternaria: #dbc5bf;
 }
 
 /* Declarando Fontes Personalizadas ---------------------------------------- */
@@ -50,7 +50,7 @@ a {
 header {
   nav {
     position: fixed;
-    z-index: 10;
+    z-index: 1000000;
     min-height: 9vh;
     min-width: 100%;
     display: flex;
@@ -124,20 +124,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .icon-violao {
-    position: absolute;
-    width: 5vw;
-    left: 15%;
-    top: 10%;
-  }
-
-  .icon-musica {
-    position: absolute;
-    width: 3vw;
-    left: 38%;
-    top: 65%;
-  }
 }
 
 .cantando {
@@ -165,9 +151,18 @@ header {
   }
 }
 
+.fraseEfeito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+
+  color: var(--primaria);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
 .container-linhadavida {
-  background-color: #dbc5bf;
-  margin-top: 10vh;
+  background-color: var(--quaternaria);
   height: 70vh;
   display: flex;
   align-items: center;
@@ -177,19 +172,17 @@ header {
   position: absolute;
   z-index: 0;
   width: 25vw;
-  height: auto;
+  height: 55vh;
   margin-left: 20vw;
   margin-top: 5vh;
-  transition:
-    transform 0.3s,
-    z-index 0s;
+  transition: all 0.3s ease; 
 }
 
 .imgCrianca:hover {
   z-index: 0;
   transform: scale(1.1);
   width: 25vw;
-  height: auto;
+  height: 55vh;
   margin-left: 20vw;
   margin-top: 5vh;
 }
@@ -201,9 +194,7 @@ header {
   height: auto;
   margin-left: 10vw;
   margin-bottom: 2vh;
-  transition:
-    transform 0.3s,
-    z-index 0s;
+  transition: all 0.3s ease; 
 }
 
 .imgAdulta:hover {
@@ -214,4 +205,68 @@ header {
   height: auto;
   margin-left: 10vw;
   margin-bottom: 2vh;
+}
+
+.container-linhadavida .descricao {
+  width: 30vw;
+  margin-left: 50vw;
+  font-size: 2.2rem;
+  color: var(--primaria);
+  font-weight: bold;
+}
+
+.quebra-linha {
+  display: flex;
+  justify-content: center;
+  color: var(--primaria);
+  font-size: 2rem;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+.container-valores {
+  background-color: var(--quaternaria);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7vw;
+  height: 60vh;
+}
+
+.titulo-valores {
+  color: #5e3527;
+  position: absolute;
+  left: 43%;
+  font-size: 2rem;
+  margin-top: 3vh;
+  font-weight: bold;
+  
+}
+.cards {
+  background-color: white;
+  width: 20%;
+  height: 70%;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 7vh;
+  text-align: center; 
+  transition: all 0.3s ease;
+}
+
+.cards:hover {
+  background-color: white;
+  text-align: center; 
+  z-index: 0;
+  width: 20%;
+  height: 70%;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 7vh;
+  transform: scale(1.1);
+}
+
+.cards .titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--terciaria);
 }

@@ -53,10 +53,8 @@
 
     <main>
         <div class="banner">
-            <img src="./assets/img/violao-icon.png" alt="" class="icon-violao">
-            <img src="./assets/img/musica-icon.png" alt="" class="icon-musica">
             <div class="img-banner">
-                <img src="./assets/img/about-banner.jpeg" alt="" class="cantando">
+                <img src="./assets/img/about-banner.jpg" alt="" class="cantando">
             </div>
 
             <div class="texto-banner">
@@ -65,14 +63,41 @@
                   sou apaixonada por música, principalmente pela minha conexão com o canto e com o meu violão.</div>
             </div>
         </div>
+        
+        <div class="fraseEfeito">
+          Quando a música apareceu na minha vida?
+        </div>
 
         <div class="container-linhadavida">
-          <img src="./assets/img/foto-perfil.png" alt="" class="imgCrianca" id="crianca" onmousemove="aparecerImagem()" onmouseleave="voltarImagem()" >
-          <img src="./assets/img/about-home.png" alt="" class="imgAdulta" id="adulta">
-
+          <img src="./assets/img/about-crianca.jpg" alt="" class="imgCrianca" id="crianca" onmousemove="aparecerImagem()" onmouseleave="voltarImagem()" >
+          <img src="./assets/img/about-adulta.jpeg" alt="" class="imgAdulta" id="adulta">
           <div class="descricao">
-            Desde criança, estive exposta à situações que me proporcionaram experiências incríveis, cantando na igreja e 
+            Desde criança, estive exposta à situações que me proporcionaram experiências incríveis, cantando na igreja e blablablablabla
           </div>
+        </div>
+
+        <div class="quebra-linha">♬⋆.˚ ♪ ─•──── 𖦤</div>
+
+        <div class="titulo-valores">MEUS VALORES</div>
+        <div class="container-valores">
+          <div class="cards">
+            <div class="titulo">RESILIÊNCIA</div>
+            <div class="descricao">É a força de absorver os impactos da vida, 
+            aprender com as falhas e continuar em frente. Não significa evitar as quedas, mas saber levantar e recomeçar mais forte.</div>
+          </div>
+          
+          <div class="cards">
+            <div class="titulo">DISCIPLINA</div>
+            <div class="descricao">É o compromisso de fazer o que precisa ser feito, mesmo sem motivação. 
+            Ela transforma o esforço diário e repetitivo em maestria, sendo a ponte real entre o sonho e a conquista.</div>
+          </div>
+
+          <div class="cards">
+            <div class="titulo">CORAGEM</div>
+            <div class="descricao">Não é a ausência de medo, mas a decisão de agir apesar dele. É a força que vence o 
+            julgamento alheio, aceita o risco de falhar e dá o passo necessário rumo ao palco da vida.</div>
+          </div>
+
         </div>
     </main>
 </body>
@@ -82,7 +107,7 @@
     let imagemCrianca = document.getElementById("crianca")
     let imagemAdulta = document.getElementById("adulta")
 
-    imagemCrianca.style.zIndex = 400;
+    imagemCrianca.style.zIndex = 700;
     imagemAdulta.style.zIndex = 0;
   }
 
