@@ -145,8 +145,8 @@ header {
     .texto {
         margin-top: 2vh;
         margin-left: 3vw;
-        width: 95%;
-        font-size: 1.3rem;
+        width: 90%;
+        font-size: 1.5rem;
     }
 
     .horizontalA {
@@ -174,7 +174,7 @@ header {
         border-radius: 10px;
         padding: 1vw;
         width: 32vw;
-        margin-left: 4vw;
+        margin-left: 25vw;
         margin-bottom: 10vh;
     }
 
@@ -230,16 +230,16 @@ header {
 
         .verticalA {
         width: 2px;
-        height: 25vh;
+        height: 15vh;
         background-color: #5E3527;
         border: none;
         margin-left: 7vw;
-        margin-top: -16vh;
+        margin-top: -13vh;
     }
 
     .verticalB {
         width: 4px;
-        height: 25vh;
+        height: 15vh;
         background-color: #5E3527;
         border: none;
         margin-left: 1vw;
@@ -250,13 +250,13 @@ header {
         background-color: var(--primaria);
         width: 90%;
         height: 0.5px;
-        margin-top: 5vh;
+        margin-top: -10vh;
     }
 
     .container-guias {
         width: 80%;
         height: 45vh;
-        margin-top: 10vh;
+        margin-top: 5vh;
         display: flex;
         gap: 5vw;
     }
