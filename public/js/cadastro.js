@@ -53,17 +53,13 @@
     }
 
  let possuiEspecial = false;
-
+ let simbolos = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '`', '~', '/']
   for (let i = 0; i < senhaVar.length; i++) {
-    let ascii = senhaVar.charCodeAt(i);
+    for (let j = 0; j < simbolos.length; j++)
 
-    if (
-        !(ascii >= 48 && ascii <= 57) && // números
-        !(ascii >= 65 && ascii <= 90) && // maiúsculas
-        !(ascii >= 97 && ascii <= 122)   // minúsculas
-    ) {
+     if (senhaVar[i] === simbolos[j]) {
         possuiEspecial = true;
-    }
+        break;
 }
 
 if (possuiEspecial == false) {

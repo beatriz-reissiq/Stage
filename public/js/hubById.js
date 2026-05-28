@@ -9,8 +9,7 @@ function verificarPerfil() {
     var idade = sessionStorage.IDADE_USUARIO;
 
     if ( sessaoID, genero == undefined ||
-        sessaoID, idade == undefined
-    ) {
+        sessaoID, idade == undefined ) {
 
         document.getElementById("popupPerfil")
             .style.display = "flex";
@@ -107,8 +106,8 @@ function exibir() {
     })
 
     .catch(function (erro) {
-        console.log("Erro ao publicar:", erro);
         document.getElementById('mensagem_post_error').innerHTML = "Erro ao publicar o post!";
+        console.log("Erro ao publicar:", erro);
     });
     
     return false;

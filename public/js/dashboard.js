@@ -4,7 +4,7 @@ const graficoGenero = new Chart(grfGenero, {
 
     type: 'doughnut',
     data: {
-        labels: ['Homens', 'Mulheres'],
+        labels: ['Homens', 'Mulheres','Outros'],
         datasets: [{
             data: [],
             backgroundColor: [
@@ -155,16 +155,19 @@ fetch("/dashboard/graficoGenero")
     .then(function(dados){
         let homens = 0;
         let mulheres = 0;
+        let outros = 0;
 
         for(let i = 0; i < dados.length; i++){
             if(dados[i].genero == "Homem"){
                 homens = dados[i].quantidade;
-            } else {
+            } if (dados[i].genero == "Mulher") {
                 mulheres = dados[i].quantidade;
+            } else {
+                outros   = dados[i].quantidade;
             }
         }
 
-        graficoGenero.data.datasets[0].data = [homens, mulheres];
+        graficoGenero.data.datasets[0].data = [homens, mulheres, outros];
         graficoGenero.update();
     });
 

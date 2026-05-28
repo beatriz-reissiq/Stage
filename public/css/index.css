@@ -277,9 +277,14 @@ main {
     margin-top: 40px;
     box-shadow: -34px 28px 0px 8px var(--primaria);
     justify-content: column;
+    transition: all 0.3s ease;
 }
 
-.card img {
+.card:hover {
+    transform: scale(1.1);
+}
+
+.imgCard {
     width: 100%;
     height: auto;
 }

@@ -36,6 +36,7 @@ function graficoQtdPosts(){
         month(dataPostagem) as mes,
         count(idPostagem) as totalPosts
         from postagem
+        where year(dataPostagem) > 2025
         group by month(dataPostagem);
     `;
 
@@ -48,7 +49,8 @@ function graficoEngajamento(){
         month(dataPostagem) as mes,
         sum(curtidas) as totalCurtidas
         from postagem
-        group by month(dataPostagem);
+        where year(dataPostagem) > 2025
+        group by month(dataPostagem)
     `;
 
     return database.executar(instrucaoSql);

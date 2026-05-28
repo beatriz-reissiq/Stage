@@ -4,7 +4,7 @@ new Chart(grfGenero, {
     type: 'doughnut',
 
     data: {
-        labels: ['Homens', 'Mulheres'],
+        labels: ['Homens', 'Mulheres', 'Outros'],
 
         datasets: [{
             label: 'Usuários',
@@ -13,7 +13,8 @@ new Chart(grfGenero, {
 
             backgroundColor: [
                 '#5E3527',
-                '#B39289'
+                '#B39289',
+                '#835e54'
             ],
 
             borderWidth: 1
