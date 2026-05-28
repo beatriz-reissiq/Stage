@@ -45,8 +45,8 @@ function cadastrar(req, res) {
     }
 
     usuarioModel.cadastrar(nome, email, senha, vocacao)
-        .then(function (resultado) {
-            res.json(resultado);
+    .then(function (resultado) {
+        res.json(resultado);
         })
         .catch(function (erro) {
             console.log(erro);

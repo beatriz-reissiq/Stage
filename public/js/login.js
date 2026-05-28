@@ -1,5 +1,5 @@
 function autenticar() {
-
+  
     var emailVar = ipt_email.value;
     var senhaVar = ipt_senha.value;
 
@@ -27,9 +27,6 @@ function autenticar() {
         sessionStorage.ADM = data.adm;
         sessionStorage.ID_USUARIO = data.id;
         sessionStorage.NOME_USUARIO = data.nome;
-
-        // popLogin.innerHTML `Bem vindo(a) de volta, ${data.nome}!`
-
         window.location = "index.html";
     })
     .catch(err => {

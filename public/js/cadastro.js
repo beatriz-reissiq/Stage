@@ -15,122 +15,145 @@ function cadastrar() {
     confirmacaoSenhaVar == "" ||
     vocacao == ""
   ) {
-    alerts.style.display = 'flex';
-    mensagem_error.innerHTML = "Preencha todos os campos!";  
+    alerts.style.display = "flex";
+
+    mensagem_error.innerHTML = "Preencha todos os campos!";
+
     setTimeout(() => {
-        mensagem_error.innerHTML = "";
-        alerts.style.display = "none";
+      mensagem_error.innerHTML = "";
+      alerts.style.display = "none";
     }, 2500);
+
     return false;
   }
 
   if (senhaVar != confirmacaoSenhaVar) {
     alerts.style.display = "flex";
+
     mensagem_error.innerHTML = `As senhas não coincidem!`;
+
     setTimeout(() => {
-        mensagem_error.innerHTML = "";
-        alerts.style.display = "none";
+      mensagem_error.innerHTML = "";
+      alerts.style.display = "none";
     }, 2500);
+
     return false;
   }
 
-  if ((senhaVar.length) < 8) {
+  if (senhaVar.length < 8) {
     alerts.style.display = "flex";
+
     mensagem_error.innerHTML = `A senha deve conter ao menos 8 caracteres!`;
+
     setTimeout(() => {
-        mensagem_error.innerHTML = "";
-        alerts.style.display = "none";
+      mensagem_error.innerHTML = "";
+      alerts.style.display = "none";
     }, 2500);
+
     return false;
   }
 
-  let temArroba = false
-  let temPonto = false
-  for (let e = 0; e < emailVar.length; e++) {
-
-    if (emailVar[e] == '@') {
-      temArroba = true
-    } if (emailVar[e] == '.') {
-      temPonto = true
-    }
-
-    let indexArroba = emailVar.indexOf('@')
-    let indexPonto = emailVar.indexOf('.')
-
-    if (indexArroba > indexPonto) {
-       if (!temArroba || !temPonto) {
-        alerts.style.display = "flex";
-        mensagem_error.innerHTML = "O email informado é inválido!";
-        setTimeout(() => {
-        mensagem_error.innerHTML = "";
-        alerts.style.display = "none";
-        }, 2500);
-      return false;
-    }
-  }
-}
-  
   let possuiEspecial = false;
-  let simbolos = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '`', '~', '/', '-', 
-  '+', '.', ':', ';', '<', '=', '>', '?', '[', ']', '_', '{', '|', '}'];
-  
+
+  let simbolos = [
+    "!",
+    "@",
+    "#",
+    "$",
+    "%",
+    "^",
+    "&",
+    "*",
+    "(",
+    ")",
+    "-",
+    "_",
+    "+",
+    "=",
+    ".",
+    ",",
+    ";",
+    ":",
+    "?",
+  ];
+
   for (let i = 0; i < senhaVar.length; i++) {
     for (let j = 0; j < simbolos.length; j++) {
-      if (senhaVar[i] === simbolos[j]) {
+      if (senhaVar[i] == simbolos[j]) {
         possuiEspecial = true;
       }
     }
   }
 
   if (!possuiEspecial) {
-    mensagem_error.innerHTML = "A senha precisa conter ao menos um caractere especial!";
     alerts.style.display = "flex";
+
+    mensagem_error.innerHTML = "A senha precisa conter caractere especial!";
+
     setTimeout(() => {
-        mensagem_error.innerHTML = "";
-        alerts.style.display = "none";
+      mensagem_error.innerHTML = "";
+      alerts.style.display = "none";
     }, 2500);
+
     return false;
   }
 
   fetch("/usuarios/cadastrar", {
     method: "POST",
+
     headers: {
       "Content-Type": "application/json",
     },
+
     body: JSON.stringify({
       nomeServer: nomeVar,
       emailServer: emailVar,
       senhaServer: senhaVar,
-      vocacaoServer: vocacao
+      vocacaoServer: vocacao,
     }),
   })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        throw new Error("Erro ao realizar cadastro.");
+    .then(function (resposta) {
+      if (resposta.ok) {
+        return fetch("/usuarios/autenticar", {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+          }),
+        });
       }
+
+      throw "Erro ao cadastrar";
     })
-    .then(data => {
+
+    .then(function (respostaLogin) {
+      return respostaLogin.json();
+    })
+
+    .then(function (data) {
+      console.log(data);
+
       sessionStorage.ADM = data.adm;
       sessionStorage.ID_USUARIO = data.id;
       sessionStorage.NOME_USUARIO = data.nome;
-      
-      let mensagem = document.getElementById("mensagem") || mensagem_error;
+
+      let mensagem = document.getElementById("mensagem");
       mensagem.innerHTML = "Cadastro realizado com sucesso! Redirecionando...";
-      
+
       setTimeout(() => {
         window.location = "index.html";
-      }, 2500);
+      }, 2000);
     })
-    .catch(err => {
-      console.log(err);
+
+    .catch(function (erro) {
+      console.log(erro);
+
       alerts.style.display = "flex";
-      mensagem_error.innerHTML = "⚠︎ Erro ao realizar cadastro.";
-      setTimeout(() => {
-        mensagem_error.innerHTML = "";
-        alerts.style.display = "none";
-      }, 2500);
-      return false;
+      mensagem_error.innerHTML = "Erro ao realizar cadastro!";
     });
 }
