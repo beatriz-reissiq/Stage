@@ -14,17 +14,23 @@ function graficoGenero(){
 
 function graficoIdade(){
 
-    var instrucaoSql = `
-        select
-        case
-            when idade between 16 and 20 then '16-20'
-            when idade between 21 and 30 then '21-30'
-            else '30+'
-        end as faixaEtaria,
-        count(id) as quantidade
-        from usuario
-        group by faixaEtaria;
-    `;
+   // var instrucaoSql = `
+   //     select
+   //     case
+   //         when idade between 16 and 20 then '16-20'
+   //         when idade between 21 and 30 then '21-30'
+   //         else '30+'
+   //     end as faixaEtaria,
+   //     count(id) as quantidade
+   //     from usuario
+   //     group by faixaEtaria;
+   // `;
+
+        var instrucaoSql = `
+            select count(id) as quantidade from ( 
+                select id from usuario where dataNascimento IS NOT NULL group by id
+            ) as ids;
+        `;
 
     return database.executar(instrucaoSql);
 }

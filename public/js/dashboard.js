@@ -1,267 +1,133 @@
-
-const grfGenero = document.getElementById('graficoGenero');
-const graficoGenero = new Chart(grfGenero, {
-
-    type: 'doughnut',
-    data: {
-        labels: ['Homens', 'Mulheres','Outros'],
-        datasets: [{
-            data: [],
-            backgroundColor: [
-                '#5E3527',
-                '#B39289'
-            ],
-            borderWidth: 1
-        }]
-    },
-
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Usuários por Gênero'
-            },
-
-            legend: {
-                position: 'bottom'
-            }
-        }
-    }
-});
-
-
-const grfIdade = document.getElementById('graficoIdade');
-const graficoIdade = new Chart(grfIdade, {
-
-    type: 'doughnut',
-    data: {
-        labels: [],
-        datasets: [{
-            data: [],
-            backgroundColor: [
-                '#5E3527',
-                '#B39289',
-                '#835e54'
-            ],
-            borderWidth: 1
-        }]
-    },
-
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Faixa Etária dos Usuários'
-            },
-
-            legend: {
-                position: 'bottom'
-            }
-        }
-    }
-});
-
-
-const grfPosts = document.getElementById('graficoQtdPosts');
-const graficoPosts = new Chart(grfPosts, {
-
-    type: 'bar',
-    data: {
-        labels: [],
-        datasets: [{
-            label: 'Quantidade de Posts',
-            data: [],
-            backgroundColor: [
-                '#5E3527',
-                '#B39289',
-                '#835e54',
-                '#a27b70',
-                '#d1b5ad'
-            ],
-            borderWidth: 1
-        }]
-    },
-
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
-
-            title: {
-                display: true,
-                text: 'Quantidade de Posts Mensais',
-                color: '#5E3527',
-                font: {
-                    size: 15
-                }
-            }
-        },
-
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-
-const grfEngajamento = document.getElementById('graficoEngajamento');
-const graficoEngajamento = new Chart(grfEngajamento, {
-
-    type: 'line',
-    data: {
-        labels: [],
-        datasets: [{
-            label: 'Curtidas Mensais',
-            data: [],
-            borderColor: '#5E3527',
-            backgroundColor: '#B39289',
-            borderWidth: 2,
-            fill: false
-        }]
-    },
-
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
-
-            title: {
-                display: true,
-                text: 'Curtidas Mensais',
-                color: '#5E3527',
-                font: {
-                    size: 15
-                }
-            }
-        },
-
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
 fetch("/dashboard/graficoGenero")
-    .then(function(resposta){
-        return resposta.json();
+  .then(function (resposta) {
+    return resposta.json();
+  })
+
+  .then(function (dados) {
+    let homens = 0;
+    let mulheres = 0;
+    let outros = 0;
+
+    for (let i = 0; i < dados.length; i++) {
+      if (dados[i].genero == "Homem") {
+        homens = dados[i].quantidade;
+      }
+      if (dados[i].genero == "Mulher") {
+        mulheres = dados[i].quantidade;
+      }
+      if (dados[i].genero == "Outro") {
+        outros = dados[i].quantidade;
+      }
+    }
+
+    graficoGenero.data.datasets[0].data = [homens, mulheres, outros];
+    graficoGenero.update();
+  });
+
+
+  fetch(`/usuarios/listar`)
+  .then(function (resposta) {
+      return resposta.json();
     })
+    .then(function (dadosUsuarios) {
+    
+    let faixaEtaria = [];
+    let faixaEtariaAtual = [0, 0, 0];
 
-    .then(function(dados){
-        let homens = 0;
-        let mulheres = 0;
-        let outros = 0;
+    for (let i = 0; i < dadosUsuarios.length; i++) {
+      
+      let dadoPosicaoAtual = dadosUsuarios[i];
+    
+      let dataNasc = new Date(dadoPosicaoAtual.dataNascimento);
+      let dataHoje = new Date();
+      let timeNasc = dataNasc.getTime();
+      let timeHoje = dataHoje.getTime();
 
-        for(let i = 0; i < dados.length; i++){
-            if(dados[i].genero == "Homem"){
-                homens = dados[i].quantidade;
-            } if (dados[i].genero == "Mulher") {
-                mulheres = dados[i].quantidade;
-            } else {
-                outros   = dados[i].quantidade;
-            }
+      let tempoDeVida = timeHoje - timeNasc;
+      let idade = tempoDeVida /1000/60/60/24/365
+
+    if (dataNasc != null) {
+
+        if (idade >= 16 && idade <= 20) {
+          faixaEtariaAtual[0]++
+        } else if (idade <= 30) {
+          faixaEtariaAtual[1]++
+        } else if (idade > 30) {
+            faixaEtariaAtual[2]++
         }
 
-        graficoGenero.data.datasets[0].data = [homens, mulheres, outros];
-        graficoGenero.update();
-    });
-
-
-fetch("/dashboard/graficoIdade")
-    .then(function(resposta){
-        return resposta.json();
-    })
-
-    .then(function(dados){
-        let faixaEtaria = [];
-        let quantidade = [];
-
-        for(let i = 0; i < dados.length; i++){
-            faixaEtaria.push(dados[i].faixaEtaria);
-            quantidade.push(dados[i].quantidade);
-        }
-
+    } else {
+        faixaEtaria.push(null);
+    }
+        faixaEtaria = ["16-20", "21-30", "30+"];
         graficoIdade.data.labels = faixaEtaria;
-        graficoIdade.data.datasets[0].data = quantidade;
+        graficoIdade.data.datasets[0].data = faixaEtariaAtual;
         graficoIdade.update();
-    });
-
+    }
+  });
 
 fetch("/dashboard/graficoQtdPosts")
-    .then(function(resposta){
-        return resposta.json();
-    })
+  .then(function (resposta) {
+    return resposta.json();
+  })
 
-    .then(function(dados){
-        let meses = [];
-        let quantidadePosts = [];
+  .then(function (dados) {
+    let meses = [];
+    let quantidadePosts = [];
 
-        for(let i = 0; i < dados.length; i++){
-            meses.push(dados[i].mes);
-            quantidadePosts.push(dados[i].totalPosts);
-        }
+    for (let i = 0; i < dados.length; i++) {
+      meses.push(dados[i].mes);
+      quantidadePosts.push(dados[i].totalPosts);
+    }
 
-        graficoPosts.data.labels = meses;
-        graficoPosts.data.datasets[0].data = quantidadePosts;
-        graficoPosts.update();
-    });
+    graficoPosts.data.labels = meses;
+    graficoPosts.data.datasets[0].data = quantidadePosts;
+    graficoPosts.update();
+  });
 
 fetch("/dashboard/graficoEngajamento")
-    .then(function(resposta){
-        return resposta.json();
-    })
+  .then(function (resposta) {
+    return resposta.json();
+  })
 
-    .then(function(dados){
+  .then(function (dados) {
+    let meses = [];
+    let curtidas = [];
 
-        let meses = [];
-        let curtidas = [];
+    for (let i = 0; i < dados.length; i++) {
+      meses.push(dados[i].mes);
+      curtidas.push(dados[i].totalCurtidas);
+    }
 
-        for(let i = 0; i < dados.length; i++){
-            meses.push(dados[i].mes);
-            curtidas.push(dados[i].totalCurtidas);
-        }
-
-        graficoEngajamento.data.labels = meses;
-        graficoEngajamento.data.datasets[0].data = curtidas;
-        graficoEngajamento.update();
-    });
-
+    graficoEngajamento.data.labels = meses;
+    graficoEngajamento.data.datasets[0].data = curtidas;
+    graficoEngajamento.update();
+  });
 
 //kpi
 fetch("/dashboard/totalUsuarios")
+  .then(function (resposta) {
+    return resposta.json();
+  })
 
-    .then(function(resposta){
-        return resposta.json();
-    })
-
-    .then(function(dados){
-        document.getElementById("kpiUsuarios")
-            .innerHTML = dados[0].totalUsuarios;
-    });
-
+  .then(function (dados) {
+    document.getElementById("kpiUsuarios").innerHTML = dados[0].totalUsuarios;
+  });
 
 fetch("/dashboard/totalPosts")
-    .then(function(resposta){
-        return resposta.json();
-    })
+  .then(function (resposta) {
+    return resposta.json();
+  })
 
-    .then(function(dados){
-        document.getElementById("kpiPosts")
-            .innerHTML = dados[0].totalPosts;
-    });
-
+  .then(function (dados) {
+    document.getElementById("kpiPosts").innerHTML = dados[0].totalPosts;
+  });
 
 fetch("/dashboard/totalCurtidas")
-    .then(function(resposta){
-        return resposta.json();
-    })
+  .then(function (resposta) {
+    return resposta.json();
+  })
 
-    .then(function(dados){
-        document.getElementById("kpiCurtidas")
-            .innerHTML = dados[0].totalCurtidas;
-    });
+  .then(function (dados) {
+    document.getElementById("kpiCurtidas").innerHTML = dados[0].totalCurtidas;
+  });
