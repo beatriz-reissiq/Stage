@@ -231,11 +231,6 @@ main {
         box-shadow: -32px 35px 0px 8px var(--primaria);
     }
 
-    .violao img {
-        width: 100%;
-        height: auto;
-    }
-
     .tituloSobre {
         position: absolute;
         min-width: 30vw;
