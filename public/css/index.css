@@ -124,7 +124,7 @@ header {
 
     .container-banner img {
         width: 100%;
-        height: 90vh;
+        max-height: 90vh;
     }
 
     .fraseEfeito {
@@ -268,9 +268,8 @@ main {
 
 .card {
     width: 18vw;
-    height: 36vh;
+    max-height: 36vh;
     margin-top: 40px;
-    box-shadow: -34px 28px 0px 8px var(--primaria);
     justify-content: column;
     transition: all 0.3s ease;
 }
@@ -282,6 +281,7 @@ main {
 .imgCard {
     width: 100%;
     height: auto;
+    box-shadow: -34px 28px 0px 8px var(--primaria);
 }
 
 .tituloServicos {

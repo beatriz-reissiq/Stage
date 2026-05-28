@@ -159,6 +159,12 @@ main {
         border-radius: 20px;
         width: 15vw;
         height: 15vh;
+        transition: all 0.3s ease;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.142);
+    }
+    
+    .KPI:hover {
+        transform: scale(1.1);
     }
 
     .KPI .titulo {

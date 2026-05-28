@@ -170,10 +170,11 @@ main {
     flex-direction: column;
     align-items: center;
     width: 80%;
-    height: 60vh;
+    height: 65vh;
     border: 1px solid var(--terciaria);
     margin-bottom: 25vh;
     margin-left: 1vw;
+    margin-top: 15vh;
 }
 
 .container-texto {
@@ -219,7 +220,7 @@ main {
 
 .btnPublicar {
     position: fixed;
-    top: 85%;
+    top: 77%;
     background-color: var(--secundaria);
     width: 8vw;
     height: 4vh;
@@ -233,7 +234,7 @@ main {
     height: 4vh;
     border-radius: 5px;
     color: white;
-   margin-bottom: 15vh;
+    margin-bottom: 15vh;
 }
 
 .mensagem_post_class{
@@ -318,10 +319,21 @@ main {
     max-width: 70vw;
 }
 
+.fechar {
+    position: absolute;
+    z-index: 100000;
+    color: var(--primaria);
+    width: 10vw;
+    height: 5vh;
+    left: 84%;
+    font-weight: bold;
+}
+
 .dataPost {
     margin-left: 65vw;
     color: gray;
 }
+
 
 
 

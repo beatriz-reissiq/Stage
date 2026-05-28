@@ -64,6 +64,11 @@ function exibir() {
     document.getElementById('containerPostagem').style.display = 'flex';
 }
 
+function fechar() {
+    document.getElementById('areaPostagem').style.display = 'none';
+    document.getElementById('containerPostagem').style.display = 'none';
+}
+
     function publicar() {
     var titulo = inputTitulo.value;
     var descricao = inputDescricao.value;
