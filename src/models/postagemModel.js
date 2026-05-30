@@ -1,88 +1,130 @@
 var database = require("../database/config");
 
 function publicar(titulo, descricao, idUsuario) {
-    var instrucaoSql = `
+  var instrucaoSql = `
     insert into postagem
     (titulo, descricao, fkUsuario)
     values
     (?, ?, ?);
 `;
 
-return database.executar(instrucaoSql, [titulo, descricao, idUsuario]);
+  return database.executar(instrucaoSql, [titulo, descricao, idUsuario]);
 }
 
 function listar(idUsuario) {
-    var instrucaoSql = 
-    `select
-     postagem.idPostagem,
-     postagem.titulo,
-     postagem.descricao,
-     postagem.curtidas,
-     postagem.dataPostagem,
-     usuario.nome,
-     usuario.vocacao,
-     case
-         when curtida.idCurtida is not null then true
-         else false
-     end as curtiu
-     from postagem
+  var instrucaoSql = `select
+    postagem.idPostagem,
+    postagem.titulo,
+    postagem.descricao,
+    postagem.dataPostagem,
+    count(curtida.idCurtida) as curtidas,
+    usuario.nome,
+    usuario.vocacao,
 
-     join usuario
-     on postagem.fkUsuario = usuario.id
+    case
+        when curtidaUsuario.idCurtida is not null then true
+        else false
+    end as curtiu
 
-     left join curtida
-     on curtida.fkPostagem = postagem.idPostagem
-     
-     and curtida.fkUsuario = ${idUsuario}
-     order by postagem.idPostagem desc; `;
+from postagem
 
-    return database.executar(instrucaoSql);
+join usuario
+on postagem.fkUsuario = usuario.id
+
+left join curtida
+on curtida.fkPostagem = postagem.idPostagem
+
+left join curtida curtidaUsuario
+on curtidaUsuario.fkPostagem = postagem.idPostagem
+and curtidaUsuario.fkUsuario = ${idUsuario}
+
+group by
+    postagem.idPostagem,
+    postagem.titulo,
+    postagem.descricao,
+    postagem.dataPostagem,
+    usuario.nome,
+    usuario.vocacao,
+    curtidaUsuario.idCurtida
+
+order by dataPostagem desc;`;
+
+  return database.executar(instrucaoSql);
 }
 
-
-function curtir(fkUsuario, fkPostagem){
-    var instrucaoSql = 
-        ` insert into curtida
+function curtir(fkUsuario, fkPostagem) {
+  var instrucaoSql = ` insert into curtida
         (fkUsuario, fkPostagem) values
         (${fkUsuario},${fkPostagem}); `;
 
-    var atualizarCurtidas = 
-    `update postagem
-        set curtidas = curtidas + 1
-        where idPostagem = ${fkPostagem}; `;
-
-    database.executar(atualizarCurtidas);
-    return database.executar(instrucaoSql);
+  return database.executar(instrucaoSql);
 }
 
-function verificarCurtida(fkUsuario, fkPostagem){
-    var instrucaoSql = 
-        `select *
+function verificarCurtida(fkUsuario, fkPostagem) {
+  var instrucaoSql = `select *
         from curtida
         where fkUsuario = ${fkUsuario}
         and fkPostagem = ${fkPostagem};`;
-        
-    return database.executar(instrucaoSql);
+
+  return database.executar(instrucaoSql);
+}
+
+function tirarCurtir(fkUsuario, fkPostagem) {
+  var instrucaoSql = `delete from curtida 
+        where fkUsuario = ${fkUsuario}
+        and fkPostagem = ${fkPostagem};`;
+
+  return database.executar(instrucaoSql);
 }
 
 function listarMeusPosts(id) {
-    var instrucaoSql = 
-        `select
-        titulo,
-        descricao,
-        curtidas,
-        dataPostagem
-        from postagem
-        where fkUsuario = ${id}
-        order by idPostagem desc;`;
+  var instrucaoSql = `
+   select
+        postagem.titulo,
+        postagem.descricao,
+        postagem.dataPostagem,
+        count(curtida.idCurtida) as curtidas
 
-    return database.executar(instrucaoSql);
+    from postagem
+
+    left join curtida
+    on curtida.fkPostagem = postagem.idPostagem
+
+    where postagem.fkUsuario = ${id}
+
+    group by
+        postagem.idPostagem,
+        postagem.titulo,
+        postagem.descricao,
+        postagem.dataPostagem
+
+    order by postagem.idPostagem desc;
+  `;
+
+  return database.executar(instrucaoSql);
+}
+
+function excluir(idPostagem){
+
+    var excluirCurtidas = `
+        delete from curtida
+        where fkPostagem = ${idPostagem};
+    `;
+
+    var excluirPost = `
+        delete from postagem
+        where idPostagem = ${idPostagem};
+    `;
+
+    database.executar(excluirCurtidas);
+    return database.executar(excluirPost);
 }
 
 module.exports = {
-    listar,
-    curtir,
-    verificarCurtida,
-    publicar,
-    listarMeusPosts
-}
+  listar,
+  curtir,
+  verificarCurtida,
+  tirarCurtir,
+  publicar,
+  listarMeusPosts,
+};

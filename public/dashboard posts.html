@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/dashboard posts.css">
 </head>
 <body>
     <header>
@@ -31,9 +31,9 @@
           </button>
           <button onclick="window.location.href='dashboard.html'">
             <img src="./assets/img/dashboard-icon.png" alt="">
-          </button>
-          <button onclick="window.location.href='dashboard posts.html'">
+             <button onclick="window.location.href='dashboard posts.html'">
             <img src="./assets/img/feed-icon.png" alt="">
+          </button>
           </button>
         </div>
     </nav-left>
@@ -41,48 +41,12 @@
 
   <main>
 <div class="container-conteudo">
-    <div class="container-graficos">
-        <div class="container-grafico-genero">
-            <canvas id="graficoGenero"></canvas>
-        </div>
-        
-        <div class="container-grafico-qtdPosts">
-            <canvas id="graficoQtdPosts"></canvas>
-        </div>
-
-        <div class="container-grafico-idade">
-            <canvas id="graficoIdade"></canvas>
-        </div>
-
-        <div class="container-grafico-engajamento">
-            <canvas id="graficoEngajamento"></canvas>
-        </div>
-    </div>
-
-    <div class="container-kpi">
-        <div class="KPI">
-            <span class="titulo">Total de Usuarios</span>
-           <span class="valor" id="kpiUsuarios"></span>
-        </div>
-        <div class="KPI">
-            <span class="titulo">Total de Posts</span>
-           <span class="valor" id="kpiPosts"></span>
-        </div>
-        <div class="KPI">
-            <span class="titulo">Total de Curtidas</span>
-           <span class="valor" id="kpiCurtidas"></span>
-        </div>
-    </div>
-
-    
+   
 </div>
 </main>
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="./js/dashboard.js"></script>
-<script src="./js/graficos.js"></script>
-
+<script src="./js/dashboard posts.js"></script>
 <script>
     window.onload = function () {
     validarDashboard();

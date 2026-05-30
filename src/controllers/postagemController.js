@@ -42,7 +42,6 @@ function curtir(req, res){
 }
 
 function verificarCurtida(req, res){
-
     var fkUsuario = req.body.fkUsuarioServer;
     var fkPostagem = req.body.fkPostagemServer;
     postagemModel.verificarCurtida(fkUsuario, fkPostagem)
@@ -65,6 +64,19 @@ function verificarCurtida(req, res){
         });
 }
 
+function tirarCurtir(req, res){
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPostagem = req.body.fkPostagemServer;
+    postagemModel.tirarCurtir(fkUsuario, fkPostagem)
+        .then(function(resultado){
+            res.json(resultado);
+        })
+        .catch(function(erro){
+            console.log(erro);
+            res.status(500).json(erro);
+        });
+}
+
 function listarMeusPosts(req, res) {
     var fkUsuario = req.params.fkUsuario;
     postagemModel.listarMeusPosts(fkUsuario)
@@ -78,10 +90,28 @@ function listarMeusPosts(req, res) {
         });
 }
 
+function excluir(req,res){
+
+    var idPostagem = req.params.idPostagem;
+
+    postagemModel.excluir(idPostagem)
+
+    .then(function(resultado){
+        res.json(resultado);
+    })
+
+    .catch(function(erro){
+        console.log(erro);
+        res.status(500).json(erro);
+    });
+}
+
 module.exports = {
     listar,
     curtir,
     verificarCurtida,
+    tirarCurtir,
     publicar,
-    listarMeusPosts
+    listarMeusPosts,
+    excluir
 }

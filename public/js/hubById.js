@@ -6,10 +6,10 @@ window.onload = function () {
 function verificarPerfil() {
     var sessaoID = sessionStorage.ID_USUARIO;
     var genero = sessionStorage.GENERO_USUARIO;
-    var idade = sessionStorage.IDADE_USUARIO;
+    var dataNasc = sessionStorage.DATANASC_USUARIO;
 
     if ( sessaoID, genero == undefined ||
-        sessaoID, idade == undefined ) {
+        sessaoID, dataNasc == undefined ) {
 
         document.getElementById("popupPerfil")
             .style.display = "flex";
@@ -21,7 +21,7 @@ function verificarPerfil() {
 
 function salvarPerfil() {
     var genero = select_genero.value;
-    var idade = input_idade.value;
+    var dataNasc = input_idade.value;
     var id = sessionStorage.ID_USUARIO;
 
     fetch("/usuarios/completarPerfil", {
@@ -33,7 +33,7 @@ function salvarPerfil() {
 
         body: JSON.stringify({
             generoServer: genero,
-            idadeServer: idade,
+            dataNascimentoServer: dataNasc,
             idUsuarioServer: id
         })
     })
@@ -41,7 +41,7 @@ function salvarPerfil() {
     .then(function () {
 
         sessionStorage.GENERO_USUARIO = genero;
-        sessionStorage.IDADE_USUARIO = idade;
+        sessionStorage.DATANASC_USUARIO = dataNasc;
 
         document.getElementById("popupPerfil")
             .style.display = "none";

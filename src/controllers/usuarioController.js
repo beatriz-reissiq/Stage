@@ -70,7 +70,7 @@ function cadastrar(req, res) {
 
 function completarPerfil(req, res) {
   var genero = req.body.generoServer;
-  var dataNascimento = req.body.dataNascimentoServer;
+  var dataNascimento = req.body.dataServer;
   var id = req.body.idUsuarioServer;
 
   usuarioModel

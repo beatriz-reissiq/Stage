@@ -16,12 +16,19 @@ router.post("/curtir", function (req, res) {
 });
 
 router.post("/verificarCurtida", function(req, res){
-
     postagemController.verificarCurtida(req, res);
+});
+
+router.post("/tirarCurtir", function(req, res){
+    postagemController.tirarCurtir(req, res);
 });
 
 router.get("/listarMeusPosts/:fkUsuario", function (req, res) {
     postagemController.listarMeusPosts(req, res);
+});
+router.delete("/excluir/:idPostagem",
+    function(req,res){
+        postagemController.excluir(req,res);
 });
 
 module.exports = router;

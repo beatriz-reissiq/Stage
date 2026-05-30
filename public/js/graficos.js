@@ -17,10 +17,17 @@ const graficoGenero = new Chart(grfGenero, {
       title: {
         display: true,
         text: "Usuários por Gênero",
+        font: {
+          size: 15
+        }
       },
 
       legend: {
         position: "bottom",
+        labels: {
+           boxWidth: 15,
+           boxHeight: 15
+        }
       },
     },
   },
@@ -45,10 +52,17 @@ const graficoIdade = new Chart(grfIdade, {
       title: {
         display: true,
         text: "Faixa Etária dos Usuários",
+        font: {
+          size: 15
+        }
       },
 
       legend: {
         position: "bottom",
+        labels: {
+           boxWidth: 15,
+           boxHeight: 15
+        }
       },
     },
   },
@@ -84,7 +98,6 @@ const graficoPosts = new Chart(grfPosts, {
       title: {
         display: true,
         text: "Quantidade de Posts Mensais",
-        color: "#5E3527",
         font: {
           size: 15,
         },
@@ -125,7 +138,6 @@ const graficoEngajamento = new Chart(grfEngajamento, {
       title: {
         display: true,
         text: "Curtidas Mensais",
-        color: "#5E3527",
         font: {
           size: 15,
         },

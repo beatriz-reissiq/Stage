@@ -65,6 +65,7 @@ function listarPosts() {
         });
 }
 
+
 function curtir(idPost, indice) {
 
     const coracao = document.getElementById(`coracao${indice}`);
@@ -87,32 +88,90 @@ function curtir(idPost, indice) {
     })
 
     .then(function(resultado){
+
         if(resultado.curtiu){
-            console.log("Você já curtiu esse post!");
-            return;
+
+            tirarCurtir(idPost, indice);
+
+        } else {
+
+            adicionarCurtir(idPost, indice);
+
         }
 
-        fetch("/postagens/curtir", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify({
-                fkUsuarioServer: sessionStorage.ID_USUARIO,
-                fkPostagemServer: idPost
-            })
-        })
-
-        .then(function(){
-            coracao.innerHTML = "❤️";
-            let numeroCurtidas = Number(curtidas.innerHTML);
-            numeroCurtidas++;
-            curtidas.innerHTML = numeroCurtidas;
-        });
     });
 }
 
+function adicionarCurtir(idPost, indice) {
+
+    const coracao = document.getElementById(`coracao${indice}`);
+    const curtidas = document.getElementById(`curtidas${indice}`);
+
+    fetch("/postagens/curtir", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            fkUsuarioServer: sessionStorage.ID_USUARIO,
+            fkPostagemServer: idPost
+        })
+    })
+
+    .then(function(resposta){
+        return resposta.json();
+    })
+
+    .then(function(){
+
+        coracao.innerHTML = "❤️";
+
+        let numeroCurtidas = Number(curtidas.innerHTML);
+
+        numeroCurtidas++;
+
+        curtidas.innerHTML = numeroCurtidas;
+
+    });
+}
+
+     function tirarCurtir(idPost, indice) {
+
+    const coracao = document.getElementById(`coracao${indice}`);
+    const curtidas = document.getElementById(`curtidas${indice}`);
+
+    fetch("/postagens/tirarCurtir", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            fkUsuarioServer: sessionStorage.ID_USUARIO,
+            fkPostagemServer: idPost
+        })
+    })
+
+    .then(function(resposta){
+        return resposta.json();
+    })
+
+    .then(function(){
+
+        coracao.innerHTML = "♡";
+
+        let numeroCurtidas = Number(curtidas.innerHTML);
+
+        numeroCurtidas--;
+
+        curtidas.innerHTML = numeroCurtidas;
+
+    });
+}
+    
+    
+        
 listarPosts();
 
 
