@@ -83,7 +83,7 @@ header {
         border-radius: 20px;
     }
 
-    .mensagem {
+    .mensagemNav {
         margin-left: 10px;
     }
 
@@ -129,8 +129,11 @@ header {
 /* ------------------------------------------*/
 
 /* KPIS ------------------------------------------*/
+body {
+    overflow-y: hidden;
+}
 main {
-    margin-top: 80px;
+    margin-top: 90px;
     margin-left: 10vw;
     display: flex;
     justify-content: center;
@@ -139,19 +142,55 @@ main {
 
     /* define a altura do elemento usando cálculo */
     /* 100vh = 100% da altura da tela */
-    height: calc(100vh - 100px);
+    height: calc(100vh - 130px);
 
     overflow-y: auto; /* adiciona rolagem vertical apenas se necessário */
     padding: 20px;
 }   
 
-
-.container-feed {
+.container-conteudo {
     margin-top: -40vh;
     border-radius: 10px;
     padding: 15px;
     width: 70%;
     height: 40vh;
+    padding-bottom: 10vh;
+}
+
+.cardPost {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
+    padding: 20px;
+    margin-top: 2vh;
+}
+
+.titulo {
+    color: var(--primaria);
+    margin-bottom: 1vh;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.comentario {
+    color: black;
+    border: 1px solid var(--secundaria);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    align-items: start;
+    margin-top: 1vh;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+}
+
+.mensagem {
+    color: gray;
+}
+
+.dataPost {
+    margin-left: 55vw;
+    color: gray;
 }
 
 .alerta {
@@ -175,32 +214,19 @@ main {
     display: none;
 }
 
-.cardPost .titulo {
-    color: var(--primaria);
-    margin-bottom: 1vh;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.cardPost .comentario {
-    color: black;
-    border: 1px solid var(--secundaria);
+.btnExcluir {
+    background-color: rgb(239, 139, 139);
+    border: 2px solid red;
     border-radius: 10px;
     padding: 5px;
-    font-size: 1rem;
-    align-items: start;
+    margin-top: 1vh;
+    transition: all 0.3s ease;
 }
 
-.cardPost {
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
-    padding: 20px;
-}
-
-.mensagem {
-    color: gray;
-}
-
-.dataPost {
-    margin-left: 55vw;
-    color: gray;
+.btnExcluir:hover {
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 1vh;
 }

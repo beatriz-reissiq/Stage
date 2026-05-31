@@ -12,6 +12,8 @@ function publicar(titulo, descricao, idUsuario) {
 }
 
 function listar(idUsuario) {
+  console.log("MODEL LISTAR", idUsuario)
+
   var instrucaoSql = `select
     postagem.idPostagem,
     postagem.titulo,
@@ -115,6 +117,7 @@ function excluir(idPostagem) {
 }
 
 function listarAdmin() {
+  console.log("MODEL LISTAR ADMIN")
   var instrucaoSql = `
         select
         postagem.idPostagem,
@@ -152,4 +155,5 @@ module.exports = {
   tirarCurtir,
   publicar,
   listarMeusPosts,
+  excluir
 };

@@ -30,7 +30,7 @@ router.delete("/excluir/:idPostagem", function (req, res) {
 });
 
 router.get("/listarAdmin", function (req, res) {
-  postagemController.listar(req, res);
+  postagemController.listarAdmin(req, res);
 });
 
 module.exports = router;
