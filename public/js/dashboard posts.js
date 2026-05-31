@@ -1,8 +1,9 @@
-  let alerts = document.getElementById("alertCadastro");
+console.log("DASHBOARD POSTS CARREGOU");
+let alerts = document.getElementById("alertCadastro");
   let mensagem_error = document.getElementById("mensagem_erro");
 
 function listarPostsAdmin() {
-
+     console.log("CHAMOU LISTAR ADMIN")
     fetch("/postagens/listarAdmin")
     .then(function(resposta){
         return resposta.json();
@@ -27,7 +28,7 @@ function listarPostsAdmin() {
                         Autor: ${posts[i].nome}
                     </div>
 
-                    <div class="descricao">
+                    <div class="comentario">
                         ${posts[i].descricao}
                     </div>
 

@@ -1,4 +1,5 @@
 var postagemModel = require("../models/postagemModel");
+console.log(postagemModel);
 
 function publicar(req, res) {
     var titulo = req.body.tituloServer;
@@ -18,6 +19,7 @@ function publicar(req, res) {
 function listar(req, res) {
     var idUsuario = req.params.idUsuario;
     postagemModel.listar(idUsuario)
+
         .then(function (resultado) {
             res.json(resultado);
         })
@@ -115,15 +117,16 @@ function listarAdmin(req, res) {
         console.log(erro);
         res.status(500).json(erro);
     });
+
 }
 
 module.exports = {
     listar,
     listarAdmin,
+    listarMeusPosts,
     curtir,
     verificarCurtida,
     tirarCurtir,
     publicar,
-    listarMeusPosts,
     excluir
 }
