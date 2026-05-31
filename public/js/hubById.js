@@ -1,7 +1,24 @@
 window.onload = function () {
+    idadeMinima();
     verificarPerfil();
     botao();
 }
+
+function idadeMinima() {
+
+    let dataNasc = new Date(sessionStorage.DATANASC_USUARIO);
+    let dataHoje = new Date();
+    let tempoDeVida = dataHoje.getTime() - dataNasc.getTime();
+    let idade = tempoDeVida / 1000 / 60 / 60 / 24 / 365;
+
+    if (idade < 16) {
+        alert("Você deve ter no mínimo 16 anos para postar!");
+        return false;
+    }
+
+    return true;
+}
+
 
 function verificarPerfil() {
     var sessaoID = sessionStorage.ID_USUARIO;
