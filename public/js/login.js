@@ -3,8 +3,12 @@ function autenticar() {
     var emailVar = ipt_email.value;
     var senhaVar = ipt_senha.value;
 
+    let alerts = document.getElementById("alertCadastro");
+    let mensagem_error = document.getElementById("mensagem_erro");
+
     if (emailVar == "" || senhaVar == "") {
-        alert("Preencha todos os campos!");
+        alerts.style.display = "flex";
+        mensagem_error.innerHTML = "Email ou senha inválidos!";
         return false;
     }
 
@@ -31,7 +35,8 @@ function autenticar() {
     })
     .catch(err => {
         console.log(err);
-        alert("Email ou senha inválidos!");
+        alerts.style.display = "flex";
+        mensagem_error.innerHTML = "Email ou senha inválidos!";
     });
 
     return false;
