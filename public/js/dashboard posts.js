@@ -1,7 +1,9 @@
+  let alerts = document.getElementById("alertCadastro");
+  let mensagem_error = document.getElementById("mensagem_erro");
 
 function listarPostsAdmin() {
 
-    fetch("/postagens/listar")
+    fetch("/postagens/listarAdmin")
     .then(function(resposta){
         return resposta.json();
     })

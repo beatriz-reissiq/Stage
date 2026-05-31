@@ -25,20 +25,17 @@ function listar(idUsuario) {
         when curtidaUsuario.idCurtida is not null then true
         else false
     end as curtiu
+    from postagem
 
-from postagem
+    join usuario
+    on postagem.fkUsuario = usuario.id
+    left join curtida
+    on curtida.fkPostagem = postagem.idPostagem
+    left join curtida curtidaUsuario
+    on curtidaUsuario.fkPostagem = postagem.idPostagem
+    and curtidaUsuario.fkUsuario = ${idUsuario}
 
-join usuario
-on postagem.fkUsuario = usuario.id
-
-left join curtida
-on curtida.fkPostagem = postagem.idPostagem
-
-left join curtida curtidaUsuario
-on curtidaUsuario.fkPostagem = postagem.idPostagem
-and curtidaUsuario.fkUsuario = ${idUsuario}
-
-group by
+    group by
     postagem.idPostagem,
     postagem.titulo,
     postagem.descricao,
@@ -47,7 +44,7 @@ group by
     usuario.vocacao,
     curtidaUsuario.idCurtida
 
-order by dataPostagem desc;`;
+    order by dataPostagem desc;`;
 
   return database.executar(instrucaoSql);
 }
@@ -80,48 +77,76 @@ function tirarCurtir(fkUsuario, fkPostagem) {
 function listarMeusPosts(id) {
   var instrucaoSql = `
    select
-        postagem.titulo,
-        postagem.descricao,
-        postagem.dataPostagem,
-        count(curtida.idCurtida) as curtidas
-
+    postagem.titulo,
+    postagem.descricao,
+    postagem.dataPostagem,
+    count(curtida.idCurtida) as curtidas
     from postagem
 
     left join curtida
     on curtida.fkPostagem = postagem.idPostagem
 
     where postagem.fkUsuario = ${id}
-
     group by
-        postagem.idPostagem,
-        postagem.titulo,
-        postagem.descricao,
-        postagem.dataPostagem
-
+    postagem.idPostagem,
+    postagem.titulo,
+    postagem.descricao,
+    postagem.dataPostagem
     order by postagem.idPostagem desc;
   `;
 
   return database.executar(instrucaoSql);
 }
 
-function excluir(idPostagem){
-
-    var excluirCurtidas = `
+function excluir(idPostagem) {
+  var excluirCurtidas = `
         delete from curtida
         where fkPostagem = ${idPostagem};
-    `;
+        `;
 
-    var excluirPost = `
+  var excluirPost = `
         delete from postagem
         where idPostagem = ${idPostagem};
+        `;
+
+  return database.executar(excluirCurtidas).then(() => {
+    return database.executar(excluirPost);
+  });
+}
+
+function listarAdmin() {
+  var instrucaoSql = `
+        select
+        postagem.idPostagem,
+        postagem.titulo,
+        postagem.descricao,
+        postagem.dataPostagem,
+        count(curtida.idCurtida) as curtidas,
+        usuario.nome,
+        usuario.vocacao
+        from postagem
+
+        join usuario
+        on postagem.fkUsuario = usuario.id
+        left join curtida
+        on curtida.fkPostagem = postagem.idPostagem
+
+        group by
+        postagem.idPostagem,
+        postagem.titulo,
+        postagem.descricao,
+        postagem.dataPostagem,
+        usuario.nome,
+        usuario.vocacao
+        order by postagem.dataPostagem desc;
     `;
 
-    database.executar(excluirCurtidas);
-    return database.executar(excluirPost);
+  return database.executar(instrucaoSql);
 }
 
 module.exports = {
   listar,
+  listarAdmin,
   curtir,
   verificarCurtida,
   tirarCurtir,

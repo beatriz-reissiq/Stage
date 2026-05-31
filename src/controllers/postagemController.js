@@ -91,10 +91,21 @@ function listarMeusPosts(req, res) {
 }
 
 function excluir(req,res){
-
     var idPostagem = req.params.idPostagem;
-
     postagemModel.excluir(idPostagem)
+
+    .then(function(resultado){
+        res.json(resultado);
+    })
+
+    .catch(function(erro){
+        console.log(erro);
+        res.status(500).json(erro);
+    });
+}
+
+function listarAdmin(req, res) {
+    postagemModel.listarAdmin()
 
     .then(function(resultado){
         res.json(resultado);
@@ -108,6 +119,7 @@ function excluir(req,res){
 
 module.exports = {
     listar,
+    listarAdmin,
     curtir,
     verificarCurtida,
     tirarCurtir,
