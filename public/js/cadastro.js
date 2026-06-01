@@ -53,8 +53,23 @@ function cadastrar() {
     return false;
   }
 
-  let possuiEspecial = false;
+   let indexArroba = emailVar.indexOf('@')
+    let indexPonto = emailVar.indexOf('.')
 
+    if (indexArroba > indexPonto) {
+       if (!temArroba || !temPonto) {
+        alerts.style.display = "flex";
+        mensagem_error.innerHTML = "O email informado é inválido!";
+        setTimeout(() => {
+        mensagem_error.innerHTML = "";
+        alerts.style.display = "none";
+        }, 2500);
+      return false;
+    }
+  }
+}
+
+  let possuiEspecial = false;
   let simbolos = [
     "!",
     "@",
