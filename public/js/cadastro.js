@@ -53,8 +53,8 @@ function cadastrar() {
     return false;
   }
 
-   let indexArroba = emailVar.indexOf('@')
-    let indexPonto = emailVar.indexOf('.')
+  let indexArroba = emailVar.indexOf('@')
+  let indexPonto = emailVar.indexOf('.')
 
     if (indexArroba > indexPonto) {
        if (!temArroba || !temPonto) {
@@ -68,6 +68,7 @@ function cadastrar() {
     }
   }
 }
+
 
   let possuiEspecial = false;
   let simbolos = [
@@ -171,4 +172,4 @@ function cadastrar() {
       alerts.style.display = "flex";
       mensagem_error.innerHTML = "Erro ao realizar cadastro!";
     });
-}
+
