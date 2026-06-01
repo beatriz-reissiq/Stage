@@ -186,3 +186,4 @@ if (!temArroba || !temPonto || indexArroba > indexPonto) {
       mensagem_error.innerHTML = "Erro ao realizar cadastro!";
     });
 
+  }
