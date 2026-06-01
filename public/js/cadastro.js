@@ -53,22 +53,35 @@ function cadastrar() {
     return false;
   }
 
-  let indexArroba = emailVar.indexOf('@')
-  let indexPonto = emailVar.indexOf('.')
+  let temArroba = false;
+  let temPonto = false;
 
-    if (indexArroba > indexPonto) {
-       if (!temArroba || !temPonto) {
-        alerts.style.display = "flex";
-        mensagem_error.innerHTML = "O email informado é inválido!";
-        setTimeout(() => {
-        mensagem_error.innerHTML = "";
-        alerts.style.display = "none";
-        }, 2500);
-      return false;
+  for (let i = 0; i < emailVar.length; i++) {
+
+    if (emailVar[i] == "@") {
+        temArroba = true;
     }
-  }
+
+    if (emailVar[i] == ".") {
+        temPonto = true;
+    }
 }
 
+let indexArroba = emailVar.indexOf("@");
+let indexPonto = emailVar.indexOf(".");
+
+if (!temArroba || !temPonto || indexArroba > indexPonto) {
+
+    alerts.style.display = "flex";
+    mensagem_error.innerHTML = "O email informado é inválido!";
+
+    setTimeout(() => {
+        mensagem_error.innerHTML = "";
+        alerts.style.display = "none";
+    }, 2500);
+
+    return false;
+}
 
   let possuiEspecial = false;
   let simbolos = [
