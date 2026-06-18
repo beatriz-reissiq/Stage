@@ -22,8 +22,7 @@ O projeto surge como uma forma de oferecer apoio, mostrando que errar faz parte 
 - Cadastro e login de usuários <br>
 - Publicação de posts (hub/comunidade) <br>
 - Perfil de usuário <br> 
-- Quiz interativo sobre gostos musicais <br>
-- Dashboard com resultados do quiz <br>
+- Dashboard de Administração do Hub <br>
 - Página institucional com informações do projeto <br>
 
 # 𐔌՞. .՞𐦯 Conceito
