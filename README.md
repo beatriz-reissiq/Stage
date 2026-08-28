@@ -1,4 +1,4 @@
-<img width="300" height="300" alt="Stage (1)" src="https://github.com/user-attachments/assets/e0acc125-0189-4985-a2c7-9873cffe6a54" />
+<img align="center" width="300" height="300" alt="Stage (1)" src="https://github.com/user-attachments/assets/e0acc125-0189-4985-a2c7-9873cffe6a54" />
 
 <h1 align="center">Stage</h1>
 
