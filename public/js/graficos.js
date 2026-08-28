@@ -1,3 +1,18 @@
+const meses = [
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro"
+];
+
 const grfGenero = document.getElementById("graficoGenero");
 const graficoGenero = new Chart(grfGenero, {
   type: "doughnut",
@@ -6,7 +21,7 @@ const graficoGenero = new Chart(grfGenero, {
     datasets: [
       {
         data: [],
-        backgroundColor: ["#B39289", "#835e54","#5E3527",],
+        backgroundColor: ["#B39289", "#835e54", "#5E3527"],
         borderWidth: 1,
       },
     ],
@@ -25,8 +40,8 @@ const graficoGenero = new Chart(grfGenero, {
       legend: {
         position: "bottom",
         labels: {
-           boxWidth: 15,
-           boxHeight: 15
+          boxWidth: 15,
+          boxHeight: 15
         }
       },
     },
@@ -41,7 +56,7 @@ const graficoIdade = new Chart(grfIdade, {
     datasets: [
       {
         data: [],
-        backgroundColor: ["#B39289", "#835e54","#5E3527",],
+        backgroundColor: ["#B39289", "#835e54", "#5E3527"],
         borderWidth: 1,
       },
     ],
@@ -60,8 +75,8 @@ const graficoIdade = new Chart(grfIdade, {
       legend: {
         position: "bottom",
         labels: {
-           boxWidth: 15,
-           boxHeight: 15
+          boxWidth: 15,
+          boxHeight: 15
         }
       },
     },
@@ -70,10 +85,12 @@ const graficoIdade = new Chart(grfIdade, {
 
 const grfPosts = document.getElementById("graficoQtdPosts");
 const graficoPosts = new Chart(grfPosts, {
+
   type: "bar",
   data: {
-    labels: [],
+    labels: meses,
     datasets: [
+
       {
         label: "Quantidade de Posts",
         data: [],
@@ -85,6 +102,7 @@ const graficoPosts = new Chart(grfPosts, {
           "#d1b5ad",
         ],
         borderWidth: 1,
+
       },
     ],
   },
@@ -94,7 +112,6 @@ const graficoPosts = new Chart(grfPosts, {
       legend: {
         display: false,
       },
-
       title: {
         display: true,
         text: "Quantidade de Posts Mensais",
@@ -116,7 +133,7 @@ const grfEngajamento = document.getElementById("graficoEngajamento");
 const graficoEngajamento = new Chart(grfEngajamento, {
   type: "line",
   data: {
-    labels: [],
+    labels: meses,
     datasets: [
       {
         label: "Curtidas Mensais",
@@ -134,7 +151,6 @@ const graficoEngajamento = new Chart(grfEngajamento, {
       legend: {
         display: false,
       },
-
       title: {
         display: true,
         text: "Curtidas Mensais",
