@@ -1,6 +1,6 @@
-# <p align="center"> Stage </p>
+<h1 align="center">Stage</h1>
 
-# <a align="center"> Plataforma de apoio e desenvolvimento para pessoas que desejam mostrar seus talentos. </a>
+# <p align="center"> Plataforma de apoio e desenvolvimento para pessoas que desejam mostrar seus talentos. </p>
 ---
 
 # Sobre o projeto
