@@ -1,3 +1,4 @@
+<img align="center" width="800" height="800" alt="Stage" src="https://github.com/user-attachments/assets/530bc2f1-855e-41d6-9c34-6c34fb311495" />
 <h1 align="center">Stage</h1>
 
 # <p align="center"> Plataforma de apoio e desenvolvimento para pessoas que desejam mostrar seus talentos. </p>
